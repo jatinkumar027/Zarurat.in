@@ -1,2 +1,2 @@
 # Zarurat.in
-by tapas baranwal
+develop by tapas,jatin
