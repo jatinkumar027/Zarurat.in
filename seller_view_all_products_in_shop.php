@@ -9,10 +9,7 @@
 		exit;
 	}
 	//showing all products in the selected shop
-<<<<<<< HEAD
 	$encriptedShopID = $_GET['shopID'];
-=======
->>>>>>> master
 	$shopID = base64_decode($_GET['shopID']);
 	$sql = "SELECT * FROM shop_inventory JOIN products JOIN product_type on shop_inventory.product_id=products.product_id AND products.product_type_id=product_type.product_type_id WHERE shop_inventory.shop_id='$shopID'";
 	$result = mysqli_query($con,$sql);
@@ -25,7 +22,6 @@
 <head>
 	<title>View all products in Shop | Zarurat.in </title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script type="text/javascript" src="public/javascript/seller_view_all_products_in_shop.js"></script>
@@ -37,30 +33,13 @@
 <body>
 <?php include 'includes/seller_header.php'; ?>
 	
-=======
-	<link rel="stylesheet" type="text/css" href="public/css/sellerLoggedInHeaderCSS.css">
-	<link rel="stylesheet" type="text/css" href="public/css/sellerfooterCSS.css">
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
-	<link rel="stylesheet" type="text/css" href="public/css/viewProductInShopCSS.css">
-</head>
-<body>
-<?php include 'includes/seller_header.php'; ?>
->>>>>>> master
 	<div class="wrapper">
 	<?php
 	if($result->num_rows>0)
 	{
-<<<<<<< HEAD
 	?> 	
 		<div class="product-list-container">
 			<!-- product -->
-=======
-	?>
-		<div class="product-list-container">
-			<!-- all selected products will be shown here -->
->>>>>>> master
 		<table>
 			<tr>
 				<th>S No</th>
@@ -73,32 +52,21 @@
 						<label>MRP</label>
 						<label>SP</label>
 						<label>Quantity</label>
-<<<<<<< HEAD
 						<label>Status</label>
 						<label>Toggle</label>
 						<label>Delete</label>
-=======
->>>>>>> master
 					</div>
 				</th>
 			</tr>
 
-<<<<<<< HEAD
 
 		
-=======
->>>>>>> master
 				<?php
 				$i=1;
 				while($row = $result->fetch_assoc())
 				{
-<<<<<<< HEAD
 					
 				?>
-=======
-				?>
-
->>>>>>> master
 				<tr>
 					<td><?php echo $i;?></td>
 					<td><img class="thumbnail" src="public/images/kirana/<?php echo $row['product_thumb'];?>"></td>
@@ -106,12 +74,7 @@
 					<td><?php echo $row['product_brand'];?></td>
 					<td><?php echo $row['product_type_name'];?></td>
 					<td>
-<<<<<<< HEAD
 						<?php 
-=======
-
-						<?php
->>>>>>> master
 							$sql = "SELECT * FROM product_seller_edit JOIN product_wt_unit on product_seller_edit.product_wt_unit_id=product_wt_unit.product_wt_unit_id WHERE shop_inventory_id='$row[shop_inventory_id]'";
 							$result2 = mysqli_query($con,$sql);
 							while($row2 = $result2->fetch_assoc())
@@ -122,7 +85,6 @@
 								<label><?php echo $row2['product_mrp']."₹"; ?></label>
 								<label><?php echo $row2['product_sp']."₹"; ?></label>
 								<label><?php echo $row2['product_quantity']." ".$row2['product_wt_unit_name']; ?></label>
-<<<<<<< HEAD
 								<label>
 									<?php
 										if($row2['product_status']=='0')
@@ -171,17 +133,11 @@
 									}
 									?>
 								</label>
-=======
->>>>>>> master
 							</div>
 
 							<?php
 							}
 						?>
-<<<<<<< HEAD
-=======
-
->>>>>>> master
 					</td>
 				</tr>
 
@@ -189,17 +145,13 @@
 					$i++;
 				}
 				?>
-<<<<<<< HEAD
 				<!-- product -->
-=======
->>>>>>> master
 			</table>
 		</div>
 		<?php
 		}
 		else {
 			?>
-<<<<<<< HEAD
 			<h1 style="display: flex; justify-content: center; align-items: center; height: 55vh;"class="message">Shop is empty</h1>
 			<?php
 		}
@@ -245,16 +197,3 @@
 <?php
 	}
 ?>
-=======
-			<!-- If no product selected in shop -->
-
-			<h1 style="display: flex; justify-content: center; align-items: center; height: 55vh;"class="message">Shop is empty</h1>
-			<?php
-		}
-		?>
-
-	</div>
-<?php include 'includes/seller_home_footer.php';?>
-</body>
-</html>
->>>>>>> master

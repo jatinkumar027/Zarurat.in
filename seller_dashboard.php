@@ -71,7 +71,6 @@ if(isset($_POST['createshop']))
 <head>
 	<title>Seller Dashboard | Zarurat.in</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" type="text/css" href="public/css/seller_home_footer.css">
@@ -79,24 +78,10 @@ if(isset($_POST['createshop']))
   <link rel="stylesheet" type="text/css" href="public/css/seller_header.css">
   <link rel="stylesheet" type="text/css" href="public/css/seller_dashboard.css">
   <script type="text/javascript" src="public/javascript/seller_header.js"></script>
-=======
-	<link rel="stylesheet" type="text/css" href="public/css/sellerhomeCSS.css">
-	<link rel="stylesheet" type="text/css" href="public/css/sellerLoggedInCSS.css">
-	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
-  <link rel="stylesheet" type="text/css" href="public/css/sellerfooterCSS.css">
-  <script type="text/javascript" src="public/java/sellerLoggedInscript.js"></script>
-  <link rel="stylesheet" type="text/css" href="public/css/sellerLoggedInHeaderCSS.css">
->>>>>>> master
 </head>
 <body>
 
 	<?php require 'includes/seller_header.php' ?>
-<<<<<<< HEAD
-=======
-
->>>>>>> master
 	<div class="wrapper">
 		<div class="register-shop-btn">
 			<button  onclick="showShopForm()">Register your Shop</button>
@@ -127,17 +112,10 @@ if(isset($_POST['createshop']))
                             <input class="input-style" type="text" placeholder="Shop Address" name="shopadd">
                         </div>
                         <div>
-<<<<<<< HEAD
                              <input class="input-style" type="time" placeholder="Open Time" name="shopopentime">
                         </div>
                         <div>
                              <input class="input-style" type="time" placeholder="Close Time" name="shopclosetime">
-=======
-                             <input class="input-style" type="text" placeholder="Open Time" name="shopopentime">
-                        </div>
-                        <div>
-                             <input class="input-style" type="text" placeholder="Close Time" name="shopclosetime">
->>>>>>> master
                         </div>
                         <div>
                              <input class="input-style" type="text" placeholder="Aadhar Card" name="shopaadhar">
@@ -171,8 +149,5 @@ if(isset($_POST['createshop']))
 
 </body>
 </html>
-<<<<<<< HEAD
 
 
-=======
->>>>>>> master
