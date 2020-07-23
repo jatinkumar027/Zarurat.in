@@ -1,0 +1,55 @@
+
+.logged-in-header
+{
+	display: flex;
+	justify-content: space-between;
+	height: 50px;
+	background: #34495e;
+}
+.logged-in-header div
+{
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.left a
+{
+	height: 100%;
+	cursor: pointer;
+	color: white;
+	padding: 0px 15px;
+	line-height: 50px;
+}
+.left a:hover
+{
+	background: #95a5a6;
+}
+.right a
+{
+	height: 100%;
+	cursor: pointer;
+	color: white;
+	padding: 0px 10px;
+
+	line-height: 50px;
+}
+
+.right a:hover
+{
+	background: #95a5a6;
+}
+
+.right label
+{
+	height: 100%;
+	cursor: pointer;
+	color: white;
+	padding: 0px 10px;
+	line-height: 50px;
+}
+.right label:hover
+{
+	background: #95a5a6;
+}
