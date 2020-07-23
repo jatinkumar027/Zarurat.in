@@ -156,7 +156,14 @@ At the moment, we aim to support all major web browsers. Any issue in the browse
 - Order request will be sent to the seller. After accepting the request, the order will be placed and hence the item will be delivered at the buyer's home.
 
 - The Seller will Update the Option in Orders as delivered and hence the order is successfully completed.
-    
+
+## Software Flow
+
+
+## Database Flow
+
+![Database Flow](https://drive.google.com/file/d/1EERtCTRFZzTlb8T4OgpYQW1Uw5ckNBNy/view?usp=sharing)
+
 ### Known Bugs
     Some of the links are not working yet because that page regarding to the link is not completed.
 
