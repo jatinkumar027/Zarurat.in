@@ -101,6 +101,7 @@ At the moment, we aim to support all major web browsers. Any issue in the browse
 - Seller Portal
 
   > If Seller is going to register/sign up then he/she have to give these information
+  
 - Sign Up
   - Name.
   - Contact Number
@@ -111,6 +112,7 @@ At the moment, we aim to support all major web browsers. Any issue in the browse
   - City
   - State
   - Password
+  
   >After the Sign up process, seller will be redirected to his/her dashboard where seller will register their shop(s).
   >
   > For the Shop Registration, Seller will provide details about his/her shop.
@@ -159,7 +161,7 @@ At the moment, we aim to support all major web browsers. Any issue in the browse
 
 ## Software Flow
 
-![Software Flow](https://github.com/jatinkumar027/Zarurat.in/blob/Development/Flow%20Images/UML_ZARURAT.png?raw=true)
+![Software Flow](https://github.com/jatinkumar027/Zarurat.in/blob/Development/Flow%20Images/ZARURAT_IN%20UML.png?raw=true)
 
 ## Database Flow
 
