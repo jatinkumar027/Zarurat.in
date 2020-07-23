@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Assosciated with all products list page */
 
 .wrapper
@@ -80,3 +81,95 @@
 {
 	width: 100px;
 }
+.message
+{
+	height: 60vh; 
+	display: flex; 
+	justify-content: center;
+	align-items: center;
+	font-size: 35px;
+}
+=======
+/* Assosciated with all products list page */
+
+.wrapper
+{
+	display: flex;
+	flex-direction: column;
+}
+.product
+{
+	display: flex;
+	border : 1.5px solid black;
+	border-radius: 10px;
+	padding: 15px;
+	margin : 5px;
+	width: 98%;
+	justify-content: space-evenly;
+	align-items: center;
+}
+.options
+{
+	margin : 2px 0px;
+	display: none;
+}
+.options select
+{
+	height: 30px;
+}
+.option-input-style
+{
+	width: 100px;
+	height: 30px;
+}
+.add-icon
+{
+	font-size: 20px;
+	cursor: pointer;
+	margin-right:  5px;
+}
+.minus-icon
+{
+	font-size: 20px;
+	cursor: pointer;
+	display: none;
+
+}
+.minus-icon:hover
+{
+	color: #e74c3c;
+}
+.add-icon:hover
+{
+	color: #2ecc71;
+}
+#add-items-btn
+{
+	border-radius: 5px;
+	height: 30px;
+	border : 2px solid #3498db;
+	cursor: pointer;
+}
+#add-items-btn:hover
+{
+	background: #3498db;
+	color: white;
+}
+#add-items-btn:focus
+{
+	outline: none;
+}
+.thumbnail img
+{
+	width: 100px;
+	height: 100px;
+}
+.pro-name
+{
+	width : 200px;
+}
+.pro-brand
+{
+	width: 100px;
+}
+>>>>>>> master

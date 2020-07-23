@@ -9,6 +9,10 @@
 	  exit;
 	}
 	//getting list of all products prefilled
+<<<<<<< HEAD
+	$encriptedShopID = $_GET['shopID'];
+=======
+>>>>>>> master
 	$shopcategoryID = base64_decode($_GET['shopcategoryID']);
 	$shopID = base64_decode($_GET['shopID']);
 	$sql = "SELECT * FROM products JOIN product_type JOIN shop_category on products.product_type_id=product_type.product_type_id AND products.shop_category_id=shop_category.shop_category_id WHERE products.shop_category_id=$shopcategoryID";
@@ -22,6 +26,15 @@
 <head>
 	<title>All Products List | Zarurat.in </title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
+	<link rel="stylesheet" type="text/css" href="public/css/seller_header.css">
+	<link rel="stylesheet" type="text/css" href="public/css/seller_home_footer.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="public/css/seller_all_products_list.css">
+	<script type="text/javascript" src="public/javascript/seller_all_products_list.js"></script>
+	<script type="text/javascript" src="public/javascript/seller_header.js"></script>
+=======
 	<link rel="stylesheet" type="text/css" href="public/css/sellerLoggedInHeaderCSS.css">
 	<link rel="stylesheet" type="text/css" href="public/css/sellerfooterCSS.css">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -29,18 +42,38 @@
 	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 	<link rel="stylesheet" type="text/css" href="public/css/productListCSS.css">
 	<script type="text/javascript" src="public/java/productListScript.js"></script>
+>>>>>>> master
 </head>
 <body onload="showOnlyOneOption();countSelectedItems()">
 
 <?php include 'includes/seller_header.php'; ?>
 
 <div class="wrapper">
+<<<<<<< HEAD
+	<?php
+	if($result->num_rows>0)
+	{
+	?>
+=======
+>>>>>>> master
 	<div style="margin-left: 20px;display: flex;justify-content: space-between;">
 		<h1>Products - List</h1>
 		<h3 style="margin-right: 10px;"><label>Selected Items : </label>
 		<label id="count-selected-items">0</label>
 		</h3>
 	</div>
+<<<<<<< HEAD
+	<?php
+	}
+	else
+	{
+		?>
+		<div class="message">No Products to Show</div>
+		<?php
+	}
+	?>
+=======
+>>>>>>> master
 	<form action="" method="post">
 		<div style="display: flex; flex-direction: column;align-items:  center; width: 100%;" class="product-list-container">
 
@@ -107,8 +140,19 @@
 
 		</div>
 		<div style="display: flex; justify-content: center; margin: 30px 0px;">
+<<<<<<< HEAD
+			<?php
+			if($result->num_rows>0)
+			{
+			?>
+			<input id="add-items-btn" style="width: 50%;" type="submit" value="Add Selected Items to Shop">
+			<?php
+			}
+			?>
+=======
 
 			<input id="add-items-btn" style="width: 50%;" type="submit" value="Add Selected Items to Shop">
+>>>>>>> master
 		</div>
 	</form>
 <!-- All product list ends here -->
@@ -123,7 +167,10 @@
 <?php
 	if(isset($_POST['MRP']) && isset($_POST['SP']) && isset($_POST['status']) && isset($_POST['Quantity']) && isset($_POST['unit']))
 	{
+<<<<<<< HEAD
+=======
 		//print_r($_POST);
+>>>>>>> master
 		$MRP = $_POST['MRP'];
 		$SP = $_POST['SP'];
 		$status = $_POST['status'];
@@ -144,7 +191,11 @@
 
 			for($j=0;$j<4;$j++)
 			{
+<<<<<<< HEAD
+				if(!empty($MRP[$k]) && !empty($SP[$k]) && !empty($quantity[$k]) && !empty($unit[$k]))
+=======
 				if(!empty($MRP[$k]) && !empty($SP[$k]) && !empty($status[$k]) && !empty($quantity[$k]) && !empty($unit[$k]))
+>>>>>>> master
 				{
 					$sql = "INSERT INTO `product_seller_edit` (`option_id`, `shop_inventory_id`, `product_mrp`, `product_sp`, `product_status`, `product_quantity`, `product_wt_unit_id`) VALUES (NULL, '$shopInventoryID', '$MRP[$k]', '$SP[$k]', '$status[$k]', '$quantity[$k]', '$unit[$k]');";
 					mysqli_query($con,$sql) or die(mysqli_error($con));
@@ -153,6 +204,12 @@
 				$k++;
 			}
 		}
+<<<<<<< HEAD
+		?>
+		<script type="text/javascript">location.href='seller_view_all_products_in_shop.php?shopID=<?php echo $encriptedShopID;?>';</script>
+		<?php
+=======
 
+>>>>>>> master
 	}
 ?>

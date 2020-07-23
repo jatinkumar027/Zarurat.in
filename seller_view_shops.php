@@ -22,11 +22,29 @@
 <head>
 	<title>Seller View All Shops | Zarurat.in</title>
 	<link rel="stylesheet" type="text/css" href="public/css/viewpageCSS.css">
+<<<<<<< HEAD
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="public/css/seller_header.css">
+	<link rel="stylesheet" type="text/css" href="public/css/seller_view_shops.css">
+	<link rel="stylesheet" type="text/css" href="public/css/seller_home_footer.css">
+	<script type="text/javascript" src="public/javascript/seller_header.js"></script>
+	<script type="text/javascript">
+		function shopDeletionConfirmation()
+		{
+			var x = confirm("Are you sure !");
+			if(x)
+				return true;
+			else return false;
+		}
+	</script>
+=======
 	<link rel="stylesheet" type="text/css" href="public/css/sellerfooterCSS.css">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 	<link rel="stylesheet" type="text/css" href="public/css/sellerLoggedInHeaderCSS.css">
+>>>>>>> master
 </head>
 <body>
 
@@ -47,15 +65,35 @@
 				?>
 
 				<div class="shop-details">
+<<<<<<< HEAD
+					<div class="shopname">
+						<label><?php echo $row['shop_name'];?></label>
+						<label><a onclick="return shopDeletionConfirmation()" href="seller_view_shops.php?shopID=<?php echo $row['shop_id']; ?>"><i class="fa fa-trash"></i></a></label>
+					</div>
+					<div class="shoptype">
+						<label><a href=""><i class="fa fa-truck icon-style"></i>&nbsp;View Orders</a></label>
+						<label>
+							<?php echo $row['shop_category_name'];?>&nbsp;
+							<i class="fa fa-shopping-bag icon-style"></i>
+						</label>
+						
+					</div>
+=======
 					<div class="shopname"><?php echo $row['shop_name'];?></div>
 					<div class="shoptype"><?php echo $row['shop_category_name'];?></div>
+>>>>>>> master
 					<div class=view>
 						<?php
 							$shopID = base64_encode($row['shop_id']);
 							$shopcategoryID = base64_encode($row['shop_category_id']);
 						?>
+<<<<<<< HEAD
+						<a href="seller_view_all_products_in_shop.php?shopID=<?php echo $shopID; ?>"><i class="fa fa-eye icon-style"></i>&nbsp;View Products</a>
+						<a href="seller_all_products_list.php?shopID=<?php echo $shopID; ?>&shopcategoryID=<?php echo $shopcategoryID; ?>">Add more items &nbsp;<i class="fa fa-plus-square icon-style"></i></a>
+=======
 						<a href="seller_view_all_products_in_shop.php?shopID=<?php echo $shopID; ?>">View Products</a>
 						<a href="seller_all_products_list.php?shopID=<?php echo $shopID; ?>&shopcategoryID=<?php echo $shopcategoryID; ?>">Add more items</a>
+>>>>>>> master
 					</div>
 				</div>
 
@@ -73,6 +111,37 @@
 		}
 		?>
 		</div>
+<<<<<<< HEAD
+		<div class="info">
+			
+		</div>
 	<?php include 'includes/seller_home_footer.php'; ?>
 </body>
 </html>
+
+
+<?php
+  
+  if(isset($_GET['shopID']))
+  {
+    $shopID = $_GET['shopID'];
+    $sql = "SELECT * FROM shop_inventory WHERE shop_id='$shopID'";
+    $result = mysqli_query($con,$sql);
+
+    while($row = $result->fetch_assoc())
+    {
+      $sql = "DELETE FROM product_seller_edit WHERE shop_inventory_id='$row[shop_inventory_id]'";
+      mysqli_query($con,$sql);
+    }
+    $sql = "DELETE FROM seller_shop WHERE shop_id='$shopID'";
+    mysqli_query($con,$sql);
+    ?>
+    <script type="text/javascript">location.href='seller_view_shops.php';</script>
+    <?php
+  }
+?>
+=======
+	<?php include 'includes/seller_home_footer.php'; ?>
+</body>
+</html>
+>>>>>>> master
