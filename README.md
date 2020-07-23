@@ -159,6 +159,7 @@ At the moment, we aim to support all major web browsers. Any issue in the browse
 
 ## Software Flow
 
+![Software Flow](https://github.com/jatinkumar027/Zarurat.in/blob/Development/Flow%20Images/UML_ZARURAT.png?raw=true)
 
 ## Database Flow
 
