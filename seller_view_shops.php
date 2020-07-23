@@ -22,6 +22,7 @@
 <head>
 	<title>Seller View All Shops | Zarurat.in</title>
 	<link rel="stylesheet" type="text/css" href="public/css/viewpageCSS.css">
+<<<<<<< HEAD
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="public/css/seller_header.css">
@@ -37,6 +38,13 @@
 			else return false;
 		}
 	</script>
+=======
+	<link rel="stylesheet" type="text/css" href="public/css/sellerfooterCSS.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+	<link rel="stylesheet" type="text/css" href="public/css/sellerLoggedInHeaderCSS.css">
+>>>>>>> master
 </head>
 <body>
 
@@ -57,6 +65,7 @@
 				?>
 
 				<div class="shop-details">
+<<<<<<< HEAD
 					<div class="shopname">
 						<label><?php echo $row['shop_name'];?></label>
 						<label><a onclick="return shopDeletionConfirmation()" href="seller_view_shops.php?shopID=<?php echo $row['shop_id']; ?>"><i class="fa fa-trash"></i></a></label>
@@ -69,13 +78,22 @@
 						</label>
 						
 					</div>
+=======
+					<div class="shopname"><?php echo $row['shop_name'];?></div>
+					<div class="shoptype"><?php echo $row['shop_category_name'];?></div>
+>>>>>>> master
 					<div class=view>
 						<?php
 							$shopID = base64_encode($row['shop_id']);
 							$shopcategoryID = base64_encode($row['shop_category_id']);
 						?>
+<<<<<<< HEAD
 						<a href="seller_view_all_products_in_shop.php?shopID=<?php echo $shopID; ?>"><i class="fa fa-eye icon-style"></i>&nbsp;View Products</a>
 						<a href="seller_all_products_list.php?shopID=<?php echo $shopID; ?>&shopcategoryID=<?php echo $shopcategoryID; ?>">Add more items &nbsp;<i class="fa fa-plus-square icon-style"></i></a>
+=======
+						<a href="seller_view_all_products_in_shop.php?shopID=<?php echo $shopID; ?>">View Products</a>
+						<a href="seller_all_products_list.php?shopID=<?php echo $shopID; ?>&shopcategoryID=<?php echo $shopcategoryID; ?>">Add more items</a>
+>>>>>>> master
 					</div>
 				</div>
 
@@ -93,6 +111,7 @@
 		}
 		?>
 		</div>
+<<<<<<< HEAD
 		<div class="info">
 			
 		</div>
@@ -121,3 +140,8 @@
     <?php
   }
 ?>
+=======
+	<?php include 'includes/seller_home_footer.php'; ?>
+</body>
+</html>
+>>>>>>> master

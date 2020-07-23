@@ -1,4 +1,5 @@
 <!-- Header shown after seller is logged in -->
+<<<<<<< HEAD
 <div class="profile-menu">
 			<div>
 				<label onclick="show_change_password_popup()"><i class="fa fa-lock"></i>&nbsp;&nbsp;Change Password</label>
@@ -19,6 +20,8 @@
 </div>
 
 
+=======
+>>>>>>> master
 <div class="logged-in-header">
 	<div class="left">
 		<a href="seller_home.php">Home</a>
@@ -26,6 +29,13 @@
 	</div>
 	<div class="right">
 		<a href="seller_view_shops.php">View Shops</a>
+<<<<<<< HEAD
 		<label onclick="show_profile_menu()"><?php echo $_SESSION['seller_name'];?>&nbsp;<i class="fa fa-caret-down"></i></label>
+=======
+		<a href="">Manage Shops</a>
+		<a href="">View Orders</a>
+		<label>User Name</label>
+		<a href="logout.php">Logout</a>
+>>>>>>> master
 	</div>
 </div>

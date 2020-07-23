@@ -23,7 +23,11 @@ if(isset($_POST['signin']))
 	  $signinpass = MD5($signinpass);
 
 		// Query checks if the email / mobile number and password are present in the database.
+<<<<<<< HEAD
 	  $query = "SELECT seller_id, seller_email, seller_name FROM seller_reg_personal WHERE (seller_email='" . $signinemailmobile . "' OR seller_contact='" . $signinemailmobile . "') AND seller_password='" . $signinpass . "'";
+=======
+	  $query = "SELECT seller_id, seller_email FROM seller_reg_personal WHERE (seller_email='" . $signinemailmobile . "' OR seller_contact='" . $signinemailmobile . "') AND seller_password='" . $signinpass . "'";
+>>>>>>> master
 	  $result = mysqli_query($con, $query)or die(mysqli_error($con));
 	  $num = mysqli_num_rows($result);
 
@@ -39,7 +43,10 @@ if(isset($_POST['signin']))
 	  $row = mysqli_fetch_array($result);
 	  $_SESSION['email'] = $row['seller_email'];
 	  $_SESSION['seller_id'] = $row['seller_id'];
+<<<<<<< HEAD
 	  $_SESSION['seller_name'] = $row['seller_name'];
+=======
+>>>>>>> master
 	  header('location: seller_dashboard.php');
 		//seller is logged in and redirected to the dashboard
 	}
@@ -120,11 +127,20 @@ elseif (isset($_POST['signup'])) {
 <head>
 	<title>Seller Home | Zarurat.in</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
 	<link rel="stylesheet" type="text/css" href="public/css/seller_home.css">
 	<script type="text/javascript" src="public/javascript/seller_home.js"></script>
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="public/css/seller_home_footer.css">
+=======
+	<link rel="stylesheet" type="text/css" href="public/css/sellerhomeCSS.css">
+	<script type="text/javascript" src="public/java/sellerhome.js"></script>
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="public/css/sellerfooterCSS.css">
+	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+>>>>>>> master
 </head>
 <body>
 	<?php require 'includes/seller_home_header.php'; ?>
@@ -147,7 +163,11 @@ elseif (isset($_POST['signup'])) {
 
 					</div>
 				<div id="back-container" style="display: flex;justify-content: flex-start; width: 80%; ">
+<<<<<<< HEAD
           <div id="back-icon-container"><i id="back-icon" onclick="hideBackIcon()"class="fa fa-arrow-left"></i></div></div>
+=======
+          <div id="back-icon-container"><i id="back-icon" onclick="hideBackIcon()"class="fas fa-arrow-left"></i></div></div>
+>>>>>>> master
 			<div class="hide"><button onclick="showSigninForm()">Sign In</button></div>
 			<div class="or hide" ><h3>OR</h3></div>
 			<div class="hide"><button onclick="showSignupForm()">Sign Up</button></div>
