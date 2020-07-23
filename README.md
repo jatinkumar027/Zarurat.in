@@ -162,7 +162,7 @@ At the moment, we aim to support all major web browsers. Any issue in the browse
 
 ## Database Flow
 
-![Database Flow](https://drive.google.com/file/d/1EERtCTRFZzTlb8T4OgpYQW1Uw5ckNBNy/view?usp=sharing)
+![Database Flow](https://github.com/jatinkumar027/Zarurat.in/blob/Development/Flow%20Images/Zarurat%20v2(1).png?raw=true)
 
 ### Known Bugs
     Some of the links are not working yet because that page regarding to the link is not completed.
