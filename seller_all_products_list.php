@@ -27,21 +27,34 @@
 	<link rel="stylesheet" type="text/css" href="public/css/seller_home_footer.css">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
 	<link rel="stylesheet" type="text/css" href="public/css/seller_all_products_list.css">
 	<script type="text/javascript" src="public/javascript/seller_all_products_list.js"></script>
+	<script type="text/javascript" src="public/javascript/seller_header.js"></script>
 </head>
 <body onload="showOnlyOneOption();countSelectedItems()">
 
 <?php include 'includes/seller_header.php'; ?>
 
 <div class="wrapper">
+	<?php
+	if($result->num_rows>0)
+	{
+	?>
 	<div style="margin-left: 20px;display: flex;justify-content: space-between;">
 		<h1>Products - List</h1>
 		<h3 style="margin-right: 10px;"><label>Selected Items : </label>
 		<label id="count-selected-items">0</label>
 		</h3>
 	</div>
+	<?php
+	}
+	else
+	{
+		?>
+		<div class="message">No Products to Show</div>
+		<?php
+	}
+	?>
 	<form action="" method="post">
 		<div style="display: flex; flex-direction: column;align-items:  center; width: 100%;" class="product-list-container">
 
@@ -108,8 +121,14 @@
 
 		</div>
 		<div style="display: flex; justify-content: center; margin: 30px 0px;">
-
+			<?php
+			if($result->num_rows>0)
+			{
+			?>
 			<input id="add-items-btn" style="width: 50%;" type="submit" value="Add Selected Items to Shop">
+			<?php
+			}
+			?>
 		</div>
 	</form>
 <!-- All product list ends here -->

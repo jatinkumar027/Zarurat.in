@@ -24,11 +24,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
-	<script type="text/javascript" src="public/java/seller_view_all_products_in_shop.js"></script>
+	<script type="text/javascript" src="public/javascript/seller_view_all_products_in_shop.js"></script>
 	<link rel="stylesheet" type="text/css" href="public/css/seller_header.css">
 	<link rel="stylesheet" type="text/css" href="public/css/seller_home_footer.css">
 	<link rel="stylesheet" type="text/css" href="public/css/seller_view_all_products_in_shop.css">
+	<script type="text/javascript" src="public/javascript/seller_header.js"></script>
 </head>
 <body>
 <?php include 'includes/seller_header.php'; ?>
@@ -101,13 +101,13 @@
 							 		if($row2['product_status']=='1') 
 							 		{
 							 			?>
-							 			<a href="seller_view_all_products_in_shop.php?shopID=<?php echo $_GET['shopID'];?>&status=<?php echo $row2['product_status'];?>&optionID=<?php echo $row2['option_id'];?>"><i class="fas fa-toggle-on toggle"></i></a>
+							 			<a href="seller_view_all_products_in_shop.php?shopID=<?php echo $_GET['shopID'];?>&status=<?php echo $row2['product_status'];?>&optionID=<?php echo $row2['option_id'];?>"><i class="fa fa-toggle-on toggle"></i></a>
 							 			<?php
 							 		}
 							 		else
 							 		{
 							 			?>
-							 			<a href="seller_view_all_products_in_shop.php?shopID=<?php echo $_GET['shopID'];?>&status=<?php echo $row2['product_status'];?>&optionID=<?php echo $row2['option_id'];?>"><i class="fas fa-toggle-off toggle"></i></a>
+							 			<a href="seller_view_all_products_in_shop.php?shopID=<?php echo $_GET['shopID'];?>&status=<?php echo $row2['product_status'];?>&optionID=<?php echo $row2['option_id'];?>"><i class="fa fa-toggle-off toggle"></i></a>
 							 			<?php
 
 							 		}
@@ -159,6 +159,9 @@
 
 	</div>
 
+	<div class="info">
+			
+	</div>
 <?php include 'includes/seller_home_footer.php';?>
 </body>
 </html>
