@@ -62,15 +62,15 @@
 
 		       <div class="shop_search_item ">
 			        <div class="shop_image">
-			        	<img style="width: 275px; height: 200px;" src="images/home_page_dairy.png">
-			        	<a href="#"><h3>Dairy Store</h3></a>
+			        	<a href=""><img style="width: 275px; height: 200px;" src="images/home_page_dairy.png">
+			        	<h3>Dairy Store</h3></a>
 			        </div>
 		       </div>
 		     
 		       <div class="shop_search_item">
 			        <div class="shop_image">
-			        	<img style="width: 275px; height: 200px;" src="images/home_page_medical.png">
-			        	<a href="#"><h3>Medical Store</h3></a>
+			        	<a href=""><img style="width: 275px; height: 200px;" src="images/home_page_medical.png">
+			        	<h3>Medical Store</h3></a>
 			        </div>
 		       </div>
 		       
