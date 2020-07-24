@@ -3,15 +3,14 @@
 *{	
 	margin: 0; 
 	padding: 0; 
-	box-sizing: 
-	border-box;
+	box-sizing: border-box;
 	font-family: 'Montserrat' , sans-serif;
 }
 
 .site-header{
 	width: 100%;
 	height: 100vh;
-	background: linear-gradient(57deg, #00c6a7, #1e4d92);
+	background: linear-gradient(57deg, rgba(255, 255, 255,1), rgba(0, 198, 167 ,1), rgba(30, 77, 146 ,1));
 	clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 0% 100%);
 }
 
@@ -20,33 +19,32 @@ a{
 }
 
 nav{
-	width: 100%; 
-	height: 100px; 
-	display: flex; 
-	color: white;
+	width: 100%;
+	height: 100px;
+	display: flex;
 }
 
-.logo{ 
-	width: 50%; 
+.logo{
+	width: 50%;
 	height: 100px;
 }
 
-.logo h1{ 
-	line-height: 100px; 
-	padding-left: 50px; 
+.logo img{
+	line-height: 100px;
+	padding:25px 0px 0px 50px;
 }
 
 .menu {
-	width: 50%; 
-	height: 100px; 
+	width: 50%;
+	height: 100px;
 }
 
 .menu ul {
-	width: 100%; 
-	height: 100px; 
-	display: flex; 
+	width: 100%;
+	height: 100px;
+	display: flex;
 	flex-direction: row;
-	justify-content: space-around; 
+	justify-content: space-around;
 	align-items: center;
 }
 
@@ -61,25 +59,36 @@ section {
 	display: flex;
 }
 
-.leftside{ 
-	width: 100%; 
-	height: auto; 
-	overflow: hidden; 
-	margin-top: 10px 
-}
-  
-.leftside img{ 
-	width: 600px; 
-	height: 500px; 
+.leftside{
+	width: 50%;
+	height: auto;
+	overflow: hidden;
+	margin-top: 10px
 }
 
-.rightside{ 
-	width: 125%; 
-	height: 200px; 
-	color: white; 
-	text-align: center; 
-	margin-top: 0px; 
-	padding: 40px; 
+.leftside img{
+	width: 300px;
+	height: 500px;
+}
+
+/** -- from : https://bbbootstrap.com/snippets/awesome-app-store-buttons-32348296 */
+
+.mdi-36px {
+		font-size: 39px;
+		margin-right: 10px
+}
+
+.container {
+		margin-top: 150px
+}
+
+.rightside{
+	width: 125%;
+	height: 200px;
+	color: white;
+	text-align: center;
+	margin-top: 0px;
+	padding: 40px;
 }
 
 .rightside h1{
@@ -196,11 +205,8 @@ section {
 
 .contain{
 	width: 100%;
-	
-    background: linear-gradient(57deg, #00c6a7, #1e4d92);
+  background: linear-gradient(57deg, #00c6a7, #1e4d92);
 	clip-path: polygon(0% 0%, 100% 15%, 100% 100%, 0% 100%); color: White;
-	
-}
 
 .maker{
 	display: flex;
@@ -210,7 +216,7 @@ section {
 .maken{
 	margin: 50px;
 }
-
+  
 .contain h1{ 
 	padding: 30px; 
 	color: black
@@ -218,8 +224,8 @@ section {
 
 
 .make_list{
-	margin: 0; 
-	padding: 0; 
+	margin: 0;
+	padding: 0;
 }
 
 .make_list li{

@@ -2,8 +2,14 @@
 <html>
   <head>
 		<title>Welcome to Zarurat.in | Your daily needs fulfiller</title>
-		<!-- creating link between css file -->
+
+    <link rel="stylesheet" href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css'>
+    <script src='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js'></script>
+    <link rel="stylesheet" href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css'>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+
 		<link rel="stylesheet" type="text/css" href="public/css/home_page.css">
+    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css'>
 		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -13,7 +19,7 @@
 			<nav>
 				<!-- logo for website, Yet to work -->
 				<div class="logo">
-					<h1>Zarurat Website</h1>
+          <img src="images/Zarurat_logo.png" alt="">
 				</div>
 				<!-- Menu, Yet to attach with other pages -->
 				<div class="menu">
@@ -27,18 +33,43 @@
 			<section>
 				<!-- creating quotes -->
 				<div class="leftside">
-					<img src="images/home_screen_demo_mobile.png">
+          <div>
+            <img src="images/home_screen_demo_mobile.png">
+          </div>
+
+
 				</div>
+        <!-- from : https://bbbootstrap.com/snippets/awesome-app-store-buttons-32348296 -->
+        <div class="page-content page-container" id="page-content">
+          <div class="padding">
+            <div class="row container d-flex justify-content-center">
+              <div class="template-demo mt-2">
+                <button class="btn btn-outline-dark btn-icon-text" style="border-radius:10px;">
+                  <i class="fa fa-apple btn-icon-prepend mdi-36px fa-3x"></i>
+                  <span class="d-inline-block text-left">
+                    <small class="font-weight-light d-block">Coming Soon on</small> App Store </span>
+                  </button>
+
+                  <button class="btn btn-outline-dark btn-icon-text" style="margin-top:10px; border-radius:10px;">
+                    <i class="fa fa-android btn-icon-prepend mdi-36px fa-3x"></i>
+                    <span class="d-inline-block text-left">
+                      <small class="font-weight-light d-block">Coming Soon on</small> Google Play </span>
+                    </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
 				<div class="rightside">
 					<h1>Free shipping and online shopping: What you need to know</h1>
 					<p>Shopping online is that much better when you don’t have to pay for shipping.</p>
-					<button>Welcome</button>
+					<button style="border-radius:10px;">Welcome</button>
 				</div>
 			</section>
 		</header>
 		<!-- adding browser and search box -->
 		<section class="main_content">
-			
+      
 			<!-- adding shop categories -->
 		<div class="shop_container">
 
@@ -54,26 +85,25 @@
 		   <div class="clearfix ">
 		       <div class="shop_search_item ">
 			        <div class="shop_image">
-			        	<a href=""><img style="width: 275px; height: 200px;" src="images/home_page_kirana.png">
+			        	<a href=""><img style="width: 275px; height: 200px;" src="images/home_page_kirana.jpg">
 			        	 <h3>Kirana Store</h3></a>
 			        </div>
-			        
+
 		       </div>
 
 		       <div class="shop_search_item ">
 			        <div class="shop_image">
-			        	<a href=""><img style="width: 275px; height: 200px;" src="images/home_page_dairy.png">
-			        	<h3>Dairy Store</h3></a>
+			        	<img style="width: 275px; height: 200px;" src="images/home_page_dairy.jpg">
+			        	<a href="#"><h3>Dairy Store</h3></a>
 			        </div>
 		       </div>
-		     
+
 		       <div class="shop_search_item">
 			        <div class="shop_image">
-			        	<a href=""><img style="width: 275px; height: 200px;" src="images/home_page_medical.png">
-			        	<h3>Medical Store</h3></a>
+			        	<img style="width: 275px; height: 200px;" src="images/home_page_medical.jpg">
+			        	<a href="#"><h3>Medical Store</h3></a>
 			        </div>
 		       </div>
-		       
 	       </div>
 		</div>
 		</section>
@@ -83,14 +113,13 @@
 				<div class="maker">
 					<div class="maken">
 						<h2>Website</h2>
-						<ul class="make_list"> 
+						<ul class="make_list">
 								<li>about</li>
 								<li>Blog</li>
 								<li>Careers</li>
 								<li>Report Fraud</li>
 								<li>Contact</li>
-						</ul>
-							
+						</ul>	
 					</div>
 					<div class="maken">
 						<h2>For Items</h2>
@@ -99,16 +128,14 @@
 							<li>Community</li>
 							<li>Blogger Help</li>
 						</ul>
-							
 					</div>
 					<div class="maken">
 						<h2>For Shops</h2>
-						<ul class="make_list"> 
+						<ul class="make_list">
 							<li>Claim your Listening</li>
 							<li>Shops Widgets</li>
 							<li>Products For Shops</li>
-						</ul>
-							
+						</ul>		
 					</div>
 					<div class="maken">
 						<h2>For You</h2>
@@ -118,8 +145,7 @@
 							<li>Security</li>
 							<li>Sitemap</li>
 						</ul>
-							
-					</div>
+          </div>
 					<div class="maken">
 						<h2>Social</h2>
 						<ul class="make_list"> 
@@ -134,7 +160,6 @@
 			<div class="take">
 				<h5>By continuing past this page, you agree to our Terms of Service, Cookie Policy, Privacy Policy and Content Policies. All trademarks are properties of their respective owners. 2008-2020 © Zarurat™ Media Pvt Ltd. All rights reserved.</h5>
 			</div>			
-
 		</footer>
   </body>
 </html>
