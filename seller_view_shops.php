@@ -56,8 +56,9 @@
 		    	while($row = $result->fetch_assoc())
 			   {
 				?>
-
 				<div class="shop-details" onmouseover="document.getElementById('delete-icon<?php echo $i;?>').style.color='white';" onmouseout="document.getElementById('delete-icon<?php echo $i;?>').style.color='red';">
+
+				<div class="shop-details">
 					<div class="shopname">
 						<label><?php echo $row['shop_name'];?></label>
 						<label><a onclick="return shopDeletionConfirmation()" href="seller_view_shops.php?shopID=<?php echo $row['shop_id']; ?>"><i id="delete-icon<?php echo $i; ?>" class="fa fa-trash"></i></a></label>
@@ -70,13 +71,22 @@
 						</label>
 						
 					</div>
+					<div class="shopname"><?php echo $row['shop_name'];?></div>
+					<div class="shoptype"><?php echo $row['shop_category_name'];?></div>
 					<div class=view>
 						<?php
 							$shopID = base64_encode($row['shop_id']);
 							$shopcategoryID = base64_encode($row['shop_category_id']);
 						?>
 						<a href="seller_view_all_products_in_shop.php?shopID=<?php echo $shopID; ?>&shopcategoryID=<?php echo $shopcategoryID; ?>"><i class="fa fa-eye icon-style"></i>&nbsp;View Products</a>
+
+						<a href="seller_view_all_products_in_shop.php?shopID=<?php echo $shopID; ?>"><i class="fa fa-eye icon-style"></i>&nbsp;View Products</a>
+
 						<a href="seller_all_products_list.php?shopID=<?php echo $shopID; ?>&shopcategoryID=<?php echo $shopcategoryID; ?>">Add more items &nbsp;<i class="fa fa-plus-square icon-style"></i></a>
+
+						<a href="seller_view_all_products_in_shop.php?shopID=<?php echo $shopID; ?>">View Products</a>
+						<a href="seller_all_products_list.php?shopID=<?php echo $shopID; ?>&shopcategoryID=<?php echo $shopcategoryID; ?>">Add more items</a>
+
 					</div>
 				</div>
 

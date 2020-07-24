@@ -170,6 +170,56 @@ if(isset($_POST['createshop']))
                                 <option>AM</option>
                                 <option>PM</option>
                               </select>
+		<div class="register-shop-btn">
+			<button  onclick="showShopForm()">Register your Shop</button>
+		</div>
+    <!-- Radio Buttons-->
+        <div class="shop-form-container" >
+        	<form id="shop-info" method="post">
+        		<div class="choose-shop-type">
+                    <div><h1>Choose Category of Shop</h1></div>
+        			<div class="radio-toolbar">
+	    					<input type="radio" id="radiokirana" name="shopcategory" value="1" checked>
+	    						<label for="radiokirana">Kirana</label>
+
+	    					<input type="radio" id="radiodairy" name="shopcategory" value="2">
+	    						<label for="radiodairy">Dairy</label>
+
+	    					<input type="radio" id="radiomedicine" name="shopcategory" value="3">
+	    						<label for="radiomedicine">Medicine</label>
+					    </div>
+            </div>
+        		<div class="shop-details" >
+        			<!-- shop form -->
+                    <div>
+                        <div>
+                            <input class="input-style" type="text" placeholder="Shop name" name="shopname">
+                        </div>
+                        <div>
+                            <input class="input-style" type="text" placeholder="Shop Address" name="shopadd">
+                        </div>
+                        <div>
+                             <input class="input-style" type="time" placeholder="Open Time" name="shopopentime">
+                        </div>
+                        <div>
+                             <input class="input-style" type="time" placeholder="Close Time" name="shopclosetime">
+                        </div>
+                        <div>
+                             <input class="input-style" type="text" placeholder="Aadhar Card" name="shopaadhar">
+                        </div>
+                        <div>
+                             <input class="input-style" type="text" placeholder="PAN Card" name="shoppan">
+                        </div>
+                        <div>
+                             <input class="input-style" type="number" placeholder="Minumum cost of order" name="shopminorder">
+                        </div>
+                        <div>
+                            <label style="margin-top: 15px;">Mode of Payment</label>
+                            <div style="display: flex; flex-direction: row">
+                                <input style="width: 25px; height: 25px; margin:5px; margin-left: 25px;" type="checkbox" name="ordertype[0]" value="1" >
+                                <label>Cash</label>
+                                <input style="width: 25px; height: 25px; margin:5px; margin-left: 25px;" type="checkbox" name="ordertype[1]" value="2" >
+                                <label>Online</label>
                             </div>
                             <div class="time-container">
                               <label>Shop Close Time : </label>
@@ -231,5 +281,4 @@ if(isset($_POST['createshop']))
 mysqli_close($con);
 //connection is closed
 ?>
-
 

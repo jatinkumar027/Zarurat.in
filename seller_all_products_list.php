@@ -9,6 +9,7 @@
 	  exit;
 	}
 	//getting list of all products prefilled
+
 	$encriptedShopcategoryID = $_GET['shopcategoryID'];
 	$encriptedShopID = $_GET['shopID'];
 	$shopcategoryID = base64_decode($_GET['shopcategoryID']);
@@ -24,6 +25,7 @@
 <head>
 	<title>All Products List | Zarurat.in </title>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 	<link rel="stylesheet" type="text/css" href="public/css/seller_header.css">
 	<link rel="stylesheet" type="text/css" href="public/css/seller_home_footer.css">
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -31,6 +33,15 @@
 	<link rel="stylesheet" type="text/css" href="public/css/seller_all_products_list.css">
 	<script type="text/javascript" src="public/javascript/seller_all_products_list.js"></script>
 	<script type="text/javascript" src="public/javascript/seller_header.js"></script>
+
+	<link rel="stylesheet" type="text/css" href="public/css/sellerLoggedInHeaderCSS.css">
+	<link rel="stylesheet" type="text/css" href="public/css/sellerfooterCSS.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+	<link rel="stylesheet" type="text/css" href="public/css/productListCSS.css">
+	<script type="text/javascript" src="public/java/productListScript.js"></script>
+
 </head>
 <body onload="showOnlyOneOption();countSelectedItems()">
 
@@ -44,6 +55,9 @@
 	<div class="page-info">
 		<h4>Products - List</h4>
 		<h4 style="margin-right: 10px;"><label>Selected Items  &nbsp;</label>
+	<div style="margin-left: 20px;display: flex;justify-content: space-between;">
+		<h1>Products - List</h1>
+		<h3 style="margin-right: 10px;"><label>Selected Items : </label>
 		<label id="count-selected-items">0</label>
 		</h4>
 	</div>
@@ -189,6 +203,11 @@
 				if($res->num_rows == 0) // if product is not in shop
 				{	
 					$sql = "INSERT INTO `shop_inventory` (`shop_inventory_id`, `shop_id`, `product_id`) VALUES (NULL, '$shopID', '$proID')";
+
+				if(!empty($MRP[$k]) && !empty($SP[$k]) && !empty($quantity[$k]) && !empty($unit[$k]))
+				{
+					$sql = "INSERT INTO `product_seller_edit` (`option_id`, `shop_inventory_id`, `product_mrp`, `product_sp`, `product_status`, `product_quantity`, `product_wt_unit_id`) VALUES (NULL, '$shopInventoryID', '$MRP[$k]', '$SP[$k]', '$status[$k]', '$quantity[$k]', '$unit[$k]');";
+
 					mysqli_query($con,$sql) or die(mysqli_error($con));
 
 					$sql = "SELECT shop_inventory_id FROM shop_inventory ORDER BY shop_inventory_id DESC LIMIT 1";

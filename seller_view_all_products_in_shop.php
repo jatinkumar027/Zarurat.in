@@ -160,6 +160,7 @@
     			<a href="seller_all_products_list.php?shopID=<?php echo $encriptedShopID;?>&shopcategoryID=<?php echo $encriptedShopcategoryID;?>"><button>Add Items to Shop</button></a>
     		</div>
 			</div>
+			<h1 style="display: flex; justify-content: center; align-items: center; height: 55vh;"class="message">Shop is empty</h1>
 			<?php
 		}
 		?>		
@@ -204,3 +205,14 @@
 <?php
 	}
 ?>
+			<!-- If no product selected in shop -->
+
+			<h1 style="display: flex; justify-content: center; align-items: center; height: 55vh;"class="message">Shop is empty</h1>
+			<?php
+		}
+		?>
+
+	</div>
+<?php include 'includes/seller_home_footer.php';?>
+</body>
+</html>
