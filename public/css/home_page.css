@@ -1,11 +1,12 @@
 /*All CSS has been added associated with index.html page */
 
-*{
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-  font-family: 'Montserrat' , sans-serif;
- }
+*{	
+	margin: 0; 
+	padding: 0; 
+	box-sizing: 
+	border-box;
+	font-family: 'Montserrat' , sans-serif;
+}
 
 .site-header{
 	width: 100%;
@@ -14,90 +15,96 @@
 	clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 0% 100%);
 }
 
+a{
+	text-decoration: none;
+}
+
 nav{
-	width: 100%;
-	height: 100px;
-	display: flex;
+	width: 100%; 
+	height: 100px; 
+	display: flex; 
 	color: white;
 }
-.logo{
-	width: 50%;
+
+.logo{ 
+	width: 50%; 
 	height: 100px;
 }
 
-.logo h1{
-  line-height: 100px;
-	padding-left: 50px;
+.logo h1{ 
+	line-height: 100px; 
+	padding-left: 50px; 
 }
 
-.menu{
-	width: 50%;
-	height: 100px;
+.menu {
+	width: 50%; 
+	height: 100px; 
 }
 
-.menu ul{
-	width: 100%;
-	height: 100px;
-	display: flex;
+.menu ul {
+	width: 100%; 
+	height: 100px; 
+	display: flex; 
 	flex-direction: row;
-  justify-content: space-around;
+	justify-content: space-around; 
 	align-items: center;
 }
 
 .menu ul li{
-	list-style: none;
-	font-size: 12px;
-	font-weight: bold;
+	list-style: none; 
+	font-size: 12px; 
+	font-weight: bold; 
 	text-transform: uppercase;
 }
 
-section {
+section { 
 	display: flex;
 }
 
-.leftside{
-	width: 100%;
-	height: auto;
-	overflow: hidden;
-	margin-top: 10px
+.leftside{ 
+	width: 100%; 
+	height: auto; 
+	overflow: hidden; 
+	margin-top: 10px 
+}
+  
+.leftside img{ 
+	width: 600px; 
+	height: 500px; 
 }
 
-.leftside img{
-	width: 600px;
-	height: 500px;
-}
-
-.rightside{
-	width: 125%;
-	height: 200px;
-	color: white;
-	text-align: center;
-	margin-top: 0px;
-	padding: 40px;
+.rightside{ 
+	width: 125%; 
+	height: 200px; 
+	color: white; 
+	text-align: center; 
+	margin-top: 0px; 
+	padding: 40px; 
 }
 
 .rightside h1{
 	font-size: 50px;
-	font-weight: 400;
+	font-weight: 400; 
 	text-transform: uppercase;
 }
 
 .rightside p{
-	font-size: 1.1rem;
+	font-size: 1.1rem; 
 	padding: 30px 0;
 }
 
-.rightside button{
-	font-size: 17px;
-	font-weight: bold;
-	color: white;
-	text-transform: uppercase;
-	background: linear-gradient(57deg, #00c6a7, #1e4d92);
-	border-radius: 4px; padding: 20px 35px;
+.rightside button{ 
+	font-size: 17px; 
+	font-weight: bold; 
+	color: white; 
+	text-transform: uppercase; 
+	background: linear-gradient(57deg, #00c6a7, #1e4d92); 
+	border-radius: 4px; 
+	padding: 20px 35px;
 }
 
 .rightside button:hover{
-	background: linear-gradient(57deg, #1e4d92, #00c6a7);
+	background: linear-gradient(57deg, #1e4d92, #00c6a7); 
 }
 
 .main_content{
@@ -106,25 +113,26 @@ section {
 }
 
 .filter_content{
-	width: 20%;
+	width: 20%; 
 	float: left;
-	padding: 30px;
-	font-family: 'Montserrat' , sans-serif; border:1px solid #ddd;
+	padding: 30px; 
+	font-family: 'Montserrat' , sans-serif; 
+	border:1px solid #ddd; 
 	margin-top: 30px;
 }
 
-.filter_list:hover {
-	box-shadow: 0 0 15px 5px rgba(39,43,55,0.15)
+.filter_list:hover { 
+	box-shadow: 0 0 15px 5px rgba(39,43,55,0.15) 
 }
 
 .filter_list{
-	margin: 0;
-	padding: 0;
-	text-align: center;
+	margin: 0; 
+	padding: 0; 
+	text-align: center; 
 }
 
-.filter_content h2{
-	text-align: center;
+.filter_content h2{ 
+	text-align: center; 
 }
 
 .filter_list li{
@@ -133,28 +141,107 @@ section {
 }
 
 .shop_container{
-	width: 50%; float: right; padding: 30px;
+	width: 50%; 
+	float: right; 
+	padding: 30px;
 }
 
-.shop_search input{
-	width: 100%;
-	padding: 20px;
-	border:1px solid #ddd;
+
+.search-bar input{
+	width: 900px;
+	height: 50px;
+}
+
+.search-bar {
+	display: flex;
+}
+
+.search-bar button{
+	width: 50px; 
+	height: 50px; 
+	margin-left: 2px;
+}
+
+.clearfix{
+	display: flex;
 }
 
 .shop_search_item{
-	width:70%;
-	display: flex;
-	flex-direction: row;
+	width:70%; 
+	margin-top: 40px; 
+	display: flex; 
+	flex-direction: row; 
+	margin: 20px;
 }
 
-.clicker{
-	align-items: baseline;
+.shop_image h3{	
+	font-family: 'Montserrat' , sans-serif;
+}
+
+ .shop_image a{ 
+ 	outline: none;
+ 	border:0; 
+ }
+
+.shop_image img{
+	border: 1.5px solid #3498db;
+	border-radius: 5px;
+	padding: 3px;
+}
+
+.shop_image img:hover{
+	box-shadow: 0px 0px 4px 0px #3498db;
 }
 
 .contain{
 	width: 100%;
-	height: 100vh;
-	background: linear-gradient(57deg, #00c6a7, #1e4d92);
-	clip-path: polygon(0% 0%, 100% 15%, 100% 100%, 0% 100%);
+	
+    background: linear-gradient(57deg, #00c6a7, #1e4d92);
+	clip-path: polygon(0% 0%, 100% 15%, 100% 100%, 0% 100%); color: White;
+	
 }
+
+.maker{
+	display: flex;
+	justify-content: space-around;
+}
+
+.maken{
+	margin: 50px;
+}
+
+.contain h1{ 
+	padding: 30px; 
+	color: black
+}
+
+
+.make_list{
+	margin: 0; 
+	padding: 0; 
+}
+
+.make_list li{
+	list-style: none;
+	padding: 10px;
+}
+
+.line{
+	width: 80%;
+	height: 1.5px;
+	background: white;
+	display: flex;
+	margin-left: 140px;
+}
+
+.take{ 
+	padding: 50px;
+}
+
+
+
+
+
+
+
+
