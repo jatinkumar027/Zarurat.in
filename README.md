@@ -22,6 +22,11 @@ public folder contains two sub folders as:
 
 >This folder contain all the css files needed for the software.
 
+
+#### public/images/kirana
+
+>This folder contain all the images of the kirana shop product.
+
 #### public/javascript
 
 >This folder contain all the java script files uses in the software.
