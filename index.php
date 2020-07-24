@@ -13,7 +13,6 @@
 		<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-
   </head>
   <body>
 		<header class="site-header">
@@ -70,7 +69,7 @@
 		</header>
 		<!-- adding browser and search box -->
 		<section class="main_content">
-
+      
 			<!-- adding shop categories -->
 		<div class="shop_container">
 
@@ -105,7 +104,6 @@
 			        	<a href="#"><h3>Medical Store</h3></a>
 			        </div>
 		       </div>
-
 	       </div>
 		</div>
 		</section>
@@ -121,17 +119,15 @@
 								<li>Careers</li>
 								<li>Report Fraud</li>
 								<li>Contact</li>
-						</ul>
-
+						</ul>	
 					</div>
 					<div class="maken">
 						<h2>For Items</h2>
-						<ul class="make_list">
+						<ul class="make_list"> 
 							<li>Code of Conduct</li>
 							<li>Community</li>
 							<li>Blogger Help</li>
 						</ul>
-
 					</div>
 					<div class="maken">
 						<h2>For Shops</h2>
@@ -139,34 +135,31 @@
 							<li>Claim your Listening</li>
 							<li>Shops Widgets</li>
 							<li>Products For Shops</li>
-						</ul>
-
+						</ul>		
 					</div>
 					<div class="maken">
 						<h2>For You</h2>
-						<ul class="make_list">
+						<ul class="make_list"> 
 							<li>Privacy</li>
 							<li>Terms</li>
 							<li>Security</li>
 							<li>Sitemap</li>
 						</ul>
-
-					</div>
+          </div>
 					<div class="maken">
 						<h2>Social</h2>
-						<ul class="make_list">
+						<ul class="make_list"> 
 							<li>Facebook</li>
 							<li>Twitter</li>
 							<li>Youtube</li>
-							<li>Instagram</li>
-						</ul>
+							<li>Instagram</li>	
+						</ul>	
 					</div>
 			</div>
 			<div class="line"></div>
 			<div class="take">
 				<h5>By continuing past this page, you agree to our Terms of Service, Cookie Policy, Privacy Policy and Content Policies. All trademarks are properties of their respective owners. 2008-2020 © Zarurat™ Media Pvt Ltd. All rights reserved.</h5>
-			</div>
-
+			</div>			
 		</footer>
   </body>
 </html>
