@@ -38,9 +38,9 @@
   	<div class="footer-down">
   		<div><a href="#">Sell on Zarurat</a></div>
   		<div><a href="#">Advertise</a></div>
-  		<div><a href="#">Help Center ?</a></div>
+  		<div><a href="#">Help Center </a></div>
   		<div>
-  			<img src="public/images/webpage/payment_methods.png">
+  			<img src="images/payment_methods.png">
   		</div>
 
   	</div>

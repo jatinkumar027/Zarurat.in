@@ -8,14 +8,16 @@
 	display: flex;
 	justify-content: center;
 }
+
 table
 {
 	border: 1px solid #ddd;
-	width: 90%;
+	width: 97%;
 	border-collapse: collapse;
 	box-shadow: 0px 0px 3px 0px black;
-	margin-top: 20px;
+	margin-top: 60px;
 	margin-bottom: 20px;
+	font-family: 'Roboto',sans-serif;
 
 }
 td,th 
@@ -30,7 +32,7 @@ td
 th
 {
 	padding: 8px 15px;
-	background: #3498db;
+	background: rgba(30, 77, 146 ,0.3);
 }
 tr:nth-child(even)
 {
@@ -39,7 +41,7 @@ tr:nth-child(even)
 .options
 {
 	display: flex;
-	border : 1.5px solid black;
+	border : 1px solid black;
 	margin : 3px 0px;
 }
 .options label
@@ -62,4 +64,39 @@ tr:nth-child(even)
 .info
 {
 	height: 250px;
+}
+.message
+{
+	height: 35vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.shop-btn
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 60px;
+	height: 100%;
+}
+.shop-btn button
+{
+	height: 60px;
+	width: 400px;
+	font-size: 22px;
+	border-radius: 15px;
+	background : #169483;
+	color: white;
+	cursor: pointer;
+	border: none;
+}
+.shop-btn button:hover
+{
+	background : #20A694;
+}
+.shop-btn button:focus
+{
+	outline : none;
 }

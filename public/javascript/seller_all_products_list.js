@@ -49,11 +49,11 @@ function onChecboxSelected(index)
 
 	if(y[index].checked)
 		{
-			x[index].style.border="1.5px solid #2ecc71";
+			x[index].style.border="0.5px solid #2ecc71";
 			x[index].style.boxShadow="0px 0px 3px 0px #2ecc71";
 		}
 	else {
-		x[index].style.border="1.5px solid black";
+		x[index].style.border="0.5px solid black";
 		x[index].style.boxShadow="0px 0px 0px 0px black";
 	}
 }
@@ -68,8 +68,10 @@ function countSelectedItems()
 		if(y[i].checked)
 		{	
 			count++;
+			
 			x[i].style.border="1.5px solid #2ecc71";
 			x[i].style.boxShadow="0px 0px 3px 0px #2ecc71";
+	
 		}
 
 	}
@@ -103,4 +105,10 @@ function enableDisable(index)
 			s[8*index + i].disabled = true;
 		}
 	}
+}
+function showRedBorder(index)
+{
+	var x = document.getElementsByClassName("product");
+	x[index].style.border = "1.5px solid red";
+
 }

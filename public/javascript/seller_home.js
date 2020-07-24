@@ -7,6 +7,7 @@ function showSigninForm()
 		document.getElementById("back-icon-container").style.display="block";
 		document.getElementById("signin-form").style.display="block";
 		document.getElementById("signup-form").style.display="none";
+		document.getElementById("message").innerHTML='';
 }
 function showSignupForm()
 {
@@ -17,6 +18,7 @@ function showSignupForm()
 		document.getElementById("signin-form").style.display="none";
 		document.getElementById("signup-form").style.display="block";
 		document.getElementById("back-icon-container").style.display="block";
+		document.getElementById("message").innerHTML='';
 }
 function hideBackIcon()
 {
@@ -27,4 +29,5 @@ function hideBackIcon()
 		x[2].style.display="block";
 		document.getElementById("signin-form").style.display="none";
 		document.getElementById("signup-form").style.display="none";
+
 }

@@ -81,22 +81,22 @@ elseif (isset($_POST['signup'])) {
    //Data Validation and passing error messages
     if ($num != 0) {
 			$_SESSION['failure']="Email Already Exists";
-			header("Location:sellerhome.php");
+			header("Location:seller_home.php");
 			return;
 
   } else if (!preg_match($regex_email, $email)) {
 			$_SESSION['failure']="Not a valid Email Id";
-			header("Location:sellerhome.php");
+			header("Location:seller_home.php");
 			return;
 
   } else if (!preg_match($regex_num, $contact)) {
 			$_SESSION['failure']="Not a valid phone number";
-			header("Location:sellerhome.php");
+			header("Location:seller_home.php");
 			return;
 
   }else if (!preg_match($regex_pin, $pincode)) {
 	    $_SESSION['failure']="Not a valid pincode";
-			header("Location:sellerhome.php");
+			header("Location:seller_home.php");
 	    return;
   } else {
 		//Query inserts values into signup page
@@ -125,6 +125,7 @@ elseif (isset($_POST['signup'])) {
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="public/css/seller_home_footer.css">
+	<link rel="stylesheet" type="text/css" href="public/css/seller_home_header.css">
 </head>
 <body>
 	<?php require 'includes/seller_home_header.php'; ?>
@@ -135,8 +136,7 @@ elseif (isset($_POST['signup'])) {
 		<div class="inner-wrapper">
 
 			<div class="log">
-					<div>
-
+					<div id="message">
 						<?php
 						//error messages
 							if ( isset($_SESSION['failure']) ) {
@@ -147,7 +147,7 @@ elseif (isset($_POST['signup'])) {
 
 					</div>
 				<div id="back-container" style="display: flex;justify-content: flex-start; width: 80%; ">
-          <div id="back-icon-container"><i id="back-icon" onclick="hideBackIcon()"class="fa fa-arrow-left"></i></div></div>
+          	<div id="back-icon-container"><i id="back-icon" onclick="hideBackIcon()"class="fa fa-arrow-left"></i></div></div>
 			<div class="hide"><button onclick="showSigninForm()">Sign In</button></div>
 			<div class="or hide" ><h3>OR</h3></div>
 			<div class="hide"><button onclick="showSignupForm()">Sign Up</button></div>
@@ -180,8 +180,17 @@ elseif (isset($_POST['signup'])) {
 				<div>
 					<input class="input-style" type="Email" name="e-mail" placeholder="Email" required="true">
 				</div>
+				<div>
+					<input class="input-style" type="text" name="address" placeholder="Flat, House no., Building, Company, Apartment: " required="true">
+				</div>
+				<div>
+					<input class="input-style" type="text" name="address" placeholder="Area, Colony, Street, Sector, Village:" required="true">
+				</div>
+				<div>
+					<input class="input-style" type="text" name="address" placeholder="Landmark e.g. near apollo hospital:" required="true">
+				</div>
 				<div style="margin-bottom: 30px;">
-					<input class="input-style" type="text" name="address" placeholder="Permanent Address" required="true">
+					<input class="input-style" type="text" name="address" placeholder=" Town/City:" required="true">
 				</div>
 				<div>
 					<select name="state" required="true" >

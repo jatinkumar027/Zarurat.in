@@ -9,6 +9,7 @@
 		exit;
 	}
 	//showing all products in the selected shop
+	$encriptedShopcategoryID = $_GET['shopcategoryID'];
 	$encriptedShopID = $_GET['shopID'];
 	$shopID = base64_decode($_GET['shopID']);
 	$sql = "SELECT * FROM shop_inventory JOIN products JOIN product_type on shop_inventory.product_id=products.product_id AND products.product_type_id=product_type.product_type_id WHERE shop_inventory.shop_id='$shopID'";
@@ -42,18 +43,18 @@
 			<!-- product -->
 		<table>
 			<tr>
-				<th>S No</th>
+				<th>S. No.</th>
 				<th>Thumbnail</th>
 				<th style="width: 15%;">Name</th>
 				<th>Brand</th>
 				<th>Type</th>
 				<th>
-					<div class="options">
+					<div style="border: none;" class="options">
 						<label>MRP</label>
-						<label>SP</label>
+						<label>Selling Price</label>
 						<label>Quantity</label>
 						<label>Status</label>
-						<label>Toggle</label>
+						<label>Toggle Status</label>
 						<label>Delete</label>
 					</div>
 				</th>
@@ -152,7 +153,13 @@
 		}
 		else {
 			?>
-			<h1 style="display: flex; justify-content: center; align-items: center; height: 55vh;"class="message">Shop is empty</h1>
+			<div style="height: 50px;"></div>
+			<div class="message">
+				<h1>Shop is Empty !</h1>
+				<div class="shop-btn">
+    			<a href="seller_all_products_list.php?shopID=<?php echo $encriptedShopID;?>&shopcategoryID=<?php echo $encriptedShopcategoryID;?>"><button>Add Items to Shop</button></a>
+    		</div>
+			</div>
 			<?php
 		}
 		?>		
