@@ -109,7 +109,7 @@ a
 .input-style:focus
 {
 	outline:none;
-	border-bottom: 2px solid #3498db;
+	border-bottom: 2px solid #169483;
 	transition: border linear 500ms;
 }
 .submit-style 

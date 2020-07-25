@@ -147,11 +147,7 @@ elseif (isset($_POST['signup'])) {
 
 					</div>
 				<div id="back-container" style="display: flex;justify-content: flex-start; width: 80%; ">
-
           	<div id="back-icon-container"><i id="back-icon" onclick="hideBackIcon()"class="fa fa-arrow-left"></i></div></div>
-
-          <div id="back-icon-container"><i id="back-icon" onclick="hideBackIcon()"class="fa fa-arrow-left"></i></div></div>
-
 			<div class="hide"><button onclick="showSigninForm()">Sign In</button></div>
 			<div class="or hide" ><h3>OR</h3></div>
 			<div class="hide"><button onclick="showSignupForm()">Sign Up</button></div>

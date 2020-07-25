@@ -1,5 +1,4 @@
 <!-- Header shown after seller is logged in -->
-
 <div class="profile-menu">
 			<div>
 				<label onclick="show_change_password_popup()"><i class="fa fa-lock"></i>&nbsp;&nbsp;Change Password</label>
@@ -29,9 +28,13 @@
 		<a href="seller_dashboard.php?register=true">Register New Shop</a>
 		<a href="seller_view_shops.php">View Shops</a>
 		<label onclick="show_profile_menu()"><?php echo $_SESSION['seller_name'];?>&nbsp;<i class="fa fa-caret-down"></i></label>
-		<a href="">Manage Shops</a>
-		<a href="">View Orders</a>
-		<label>User Name</label>
-		<a href="logout.php">Logout</a>
 	</div>
+</div>
+
+
+<div class="success-pop-up">
+	<?php 
+	if(isset($_SESSION['message']))
+		echo $_SESSION['message'];
+	?>
 </div>
