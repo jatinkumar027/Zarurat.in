@@ -9,6 +9,7 @@
 	  exit;
 	}
 	//getting list of all products prefilled
+
 	$encriptedShopcategoryID = $_GET['shopcategoryID'];
 	$encriptedShopID = $_GET['shopID'];
 	$shopcategoryID = base64_decode($_GET['shopcategoryID']);
@@ -199,6 +200,7 @@
 				if($res->num_rows == 0) // if product is not in shop
 				{	
 					$sql = "INSERT INTO `shop_inventory` (`shop_inventory_id`, `shop_id`, `product_id`) VALUES (NULL, '$shopID', '$proID')";
+
 					mysqli_query($con,$sql) or die(mysqli_error($con));
 
 					$sql = "SELECT shop_inventory_id FROM shop_inventory ORDER BY shop_inventory_id DESC LIMIT 1";

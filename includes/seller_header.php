@@ -10,6 +10,7 @@
 	<div class="cancel-icon-container">
 		<label>Change Password</label>
 		<label><i onclick="hide_change_password_popup()" class="fa fa-close"></i></label>
+		<img src="images/cancel.jpg" onclick="hide_change_password_popup()">
 	</div>
 	<form>				
 		<input type="Password" name="old_pass" placeholder="Old Password">

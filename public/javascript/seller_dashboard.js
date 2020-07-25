@@ -1,6 +1,5 @@
 function showShopTypes()
 {
-	
 	document.getElementsByClassName("register-shop-btn")[0].style.display="none";
 	document.getElementsByClassName("wrapper")[0].style.height="100%";
 	document.getElementsByClassName("shop-type-container")[0].style.display="block";

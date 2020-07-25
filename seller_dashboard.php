@@ -170,6 +170,7 @@ if(isset($_POST['createshop']))
                                 <option>AM</option>
                                 <option>PM</option>
                               </select>
+
                             </div>
                             <div class="time-container">
                               <label>Shop Close Time : &nbsp;</label>
@@ -241,5 +242,6 @@ if(isset($_POST['createshop']))
 mysqli_close($con);
 //connection is closed
 ?>
+
 
 

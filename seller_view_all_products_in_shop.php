@@ -136,6 +136,7 @@
 							 		{
 							 			?>
 							 			<a href="seller_view_all_products_in_shop.php?shopID=<?php echo $_GET['shopID'];?>&status=<?php echo $row2['product_status'];?>&optionID=<?php echo $row2['option_id'];?>&shopcategoryID=<?php echo $encriptedShopcategoryID;?>"><i class="fa fa-toggle-on toggle"></i></a>
+
 							 			<?php
 							 		}
 							 		else
@@ -241,6 +242,7 @@
 		$_SESSION['color'] = '#e74c3c';
 ?>
 <script>location.href='seller_view_all_products_in_shop.php?shopID=<?php echo $encriptedShopID;?>&shopcategoryID=<?php echo $encriptedShopcategoryID;?>'</script>
+
 <?php		
 	}
 	else if(isset($_GET['shopInventoryID']))
@@ -249,7 +251,6 @@
 		mysqli_query($con,$sql);
 		$sql = "DELETE FROM product_seller_edit WHERE shop_inventory_id='$_GET[shopInventoryID]'";
 		mysqli_query($con,$sql);
-		
 		$_SESSION['message'] = 'Deleted Successfully';
 		$_SESSION['color'] = '#e74c3c';
 ?>

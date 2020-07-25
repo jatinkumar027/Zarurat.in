@@ -71,7 +71,6 @@ function countSelectedItems()
 			
 			x[i].style.border="1.5px solid #2ecc71";
 			x[i].style.boxShadow="0px 0px 3px 0px #2ecc71";
-	
 		}
 
 	}

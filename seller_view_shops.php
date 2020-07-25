@@ -56,7 +56,6 @@
 		    	while($row = $result->fetch_assoc())
 			   {
 				?>
-
 				<div class="shop-details" onmouseover="document.getElementById('delete-icon<?php echo $i;?>').style.color='white';" onmouseout="document.getElementById('delete-icon<?php echo $i;?>').style.color='red';">
 					<div class="shopname">
 						<label><?php echo strtoupper($row['shop_name']);?></label>

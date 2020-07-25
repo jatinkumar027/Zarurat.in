@@ -15,8 +15,6 @@
 font-size: 15px;
 display: flex;
 flex-direction: column;
-
-
 }
 .profile-menu div a,.profile-menu div label
 {
@@ -87,6 +85,7 @@ flex-direction: column;
 #update-btn:hover
 {
 	background: #169483;
+
 	color:white;
 }
 #update-btn:focus
@@ -120,8 +119,6 @@ flex-direction: column;
 	color : #3498db;
 }
 
-
-
 .logged-in-header
 {
 	display: flex;
@@ -138,7 +135,6 @@ flex-direction: column;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-
 }
 
 .left a

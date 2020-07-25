@@ -8,6 +8,7 @@ function showSigninForm()
 		document.getElementById("signin-form").style.display="block";
 		document.getElementById("signup-form").style.display="none";
 		document.getElementById("message").innerHTML='';
+
 }
 function showSignupForm()
 {
@@ -29,5 +30,4 @@ function hideBackIcon()
 		x[2].style.display="block";
 		document.getElementById("signin-form").style.display="none";
 		document.getElementById("signup-form").style.display="none";
-
 }
