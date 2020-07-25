@@ -8,12 +8,6 @@ a
 {
 	text-decoration: none;
 }
-.header
-{
-	height: 60px;
-	background: #34495e;
-}
-
 .Main-wrapper
 {
 	margin-bottom: 20px;
@@ -60,16 +54,16 @@ a
 {
 	height: 50px;
 	width: 180px;
-	background: #2ecc71;
+	background: #169483;
 	color: white;
 	font-size: 17px;
 	border:none;
-	border:2px solid #95a5a6;
+	border:2px solid #169483;
 	cursor: pointer;
 }
 .log button:hover
 {
-	border:2px solid #2ecc71;
+	border:2px solid #169483;
 	background: white;
 	color: black;
 }
@@ -175,7 +169,7 @@ select:focus
 	margin-left: 5px;
 	cursor: pointer;
 	font-size: 17px;
-	border:2px solid #3498db;
+	border:2px solid #169483;
 	border-radius: 5px;
 }
 .or
@@ -190,6 +184,6 @@ select:focus
 .submit-style:hover
 {
 	color: white;
-	background: #3498db;
+	background: #169483;
 }
 

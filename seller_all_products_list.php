@@ -9,6 +9,8 @@
 	  exit;
 	}
 	//getting list of all products prefilled
+
+	$encriptedShopcategoryID = $_GET['shopcategoryID'];
 	$encriptedShopID = $_GET['shopID'];
 	$shopcategoryID = base64_decode($_GET['shopcategoryID']);
 	$shopID = base64_decode($_GET['shopID']);
@@ -40,11 +42,21 @@
 	if($result->num_rows>0)
 	{
 	?>
-	<div style="margin-left: 20px;display: flex;justify-content: space-between;">
-		<h1>Products - List</h1>
-		<h3 style="margin-right: 10px;"><label>Selected Items : </label>
+	<div class="page-info">
+		<h4>Products - List</h4>
+		<div class="left-pad"></div>
+		<div class="search-container">
+			<select id="select-category-option" name="" id="">
+				<option value="">All Categories</option>
+				<option value="">Category Name</option>
+			</select>
+			<input class="search-box" type="text" placeholder="Search Products here...">
+			<button class="search-btn" type="submit"><i class="fa fa-search"></i></button>
+		</div>
+		<div class="right-pad"></div>	
+		<h4 style="margin-right: 10px;"><label>Selected Items  &nbsp;</label>
 		<label id="count-selected-items">0</label>
-		</h3>
+		</h4>
 	</div>
 	<?php
 	}
@@ -64,9 +76,11 @@
 			$i=0;
 			while($row = $result->fetch_assoc())
 			{
-
+			$sql = "SELECT * FROM shop_inventory WHERE product_id='$row[product_id]' AND shop_id='$shopID'";
+			$res = mysqli_query($con,$sql);
 			?>
-			<div class="product">
+			<div <?php if($res->num_rows>0){ echo "style='background: rgba(0, 153, 130 ,0.2);'";}?>class="product">
+				<div><?php echo $i+1;?></div>
 				<div class="thumbnail">
 					<img src="public/images/kirana/<?php echo $row['product_thumb'];?>">
 				</div>
@@ -92,7 +106,7 @@
 							<option value="1">Active</option>
 							<option value="0">Inactive</option>
 						</select>
-						<input class="option-input-style quantity" type="number" name="Quantity[]" placeholder="Quantity" disabled="true">
+						<input class="option-input-style quantity" type="number" name="Quantity[]" placeholder="wt / vol" disabled="true">
 						<select class="select-field" name="unit[]" disabled="true">
 							<option value="1">Kg</option>
 							<option value="2">gm</option>
@@ -111,8 +125,22 @@
 				</div>
 
 				<div class="select-item-by-check-box">
+				
 					<input onclick="onChecboxSelected(<?php echo $i; ?>);countSelectedItems();enableDisable(<?php echo $i; ?>);" class="select-item" style="width: 25px; height: 25px;" type="checkbox" name="productID[]" value="<?php echo $row['product_id']; ?>">
+					
 				</div>
+				<?php
+				if($res->num_rows>0)
+				{
+				?>
+				<div class="product-message">
+					<label >Already</label>
+					<label >In shop</label>
+				</div>
+				<?php
+				}
+				?>
+				
 			</div>
 			<?php
 				$i++;
@@ -150,30 +178,58 @@
 		$unit = $_POST['unit'];
 		$productID = $_POST['productID'];
 		$k = 0;
+		$m = 0;
 		for($i=0;$i<sizeof($productID);$i++)
 		{
-			$proID = $productID[$i];
-			$sql = "INSERT INTO `shop_inventory` (`shop_inventory_id`, `shop_id`, `product_id`) VALUES (NULL, '$shopID', '$proID')";
-			mysqli_query($con,$sql) or die(mysqli_error($con));
-
-			$sql = "SELECT shop_inventory_id FROM shop_inventory ORDER BY shop_inventory_id DESC LIMIT 1";
-			$result = mysqli_query($con,$sql);
-			$row = $result->fetch_assoc();
-			$shopInventoryID = $row['shop_inventory_id'];
-
+			$control = 0;
 			for($j=0;$j<4;$j++)
 			{
-				if(!empty($MRP[$k]) && !empty($SP[$k]) && !empty($quantity[$k]) && !empty($unit[$k]))
-				{
-					$sql = "INSERT INTO `product_seller_edit` (`option_id`, `shop_inventory_id`, `product_mrp`, `product_sp`, `product_status`, `product_quantity`, `product_wt_unit_id`) VALUES (NULL, '$shopInventoryID', '$MRP[$k]', '$SP[$k]', '$status[$k]', '$quantity[$k]', '$unit[$k]');";
+				if(!empty($MRP[$m]) && !empty($SP[$m]) && !empty($quantity[$m]) && !empty($unit[$m]))
+				{					
+					$control = 1;
+					break;
+				}
+				$m++;
+			}
+
+			if($control == 1)
+			{
+				$proID = $productID[$i];
+				$sql = "SELECT * FROM shop_inventory WHERE product_id='$proID' AND shop_id='$shopID'";
+				$res = mysqli_query($con,$sql);
+				if($res->num_rows == 0) // if product is not in shop
+				{	
+					$sql = "INSERT INTO `shop_inventory` (`shop_inventory_id`, `shop_id`, `product_id`) VALUES (NULL, '$shopID', '$proID')";
+
 					mysqli_query($con,$sql) or die(mysqli_error($con));
 
+					$sql = "SELECT shop_inventory_id FROM shop_inventory ORDER BY shop_inventory_id DESC LIMIT 1";
+					$result = mysqli_query($con,$sql);
+					$row = $result->fetch_assoc();
+					$shopInventoryID = $row['shop_inventory_id'];
+				}	
+				else {  // if product is already in shop
+
+					$row = $res->fetch_assoc();
+					$shopInventoryID = $row['shop_inventory_id'];
 				}
-				$k++;
+
+
+				for($j=0;$j<4;$j++)
+				{
+					if(!empty($MRP[$k]) && !empty($SP[$k]) && !empty($quantity[$k]) && !empty($unit[$k]))
+					{
+						$sql = "INSERT INTO `product_seller_edit` (`option_id`, `shop_inventory_id`, `product_mrp`, `product_sp`, `product_status`, `product_quantity`, `product_wt_unit_id`) VALUES (NULL, '$shopInventoryID', '$MRP[$k]', '$SP[$k]', '$status[$k]', '$quantity[$k]', '$unit[$k]');";
+						mysqli_query($con,$sql) or die(mysqli_error($con));
+
+					}
+					$k++;
+				}
 			}
 		}
 		?>
-		<script type="text/javascript">location.href='seller_view_all_products_in_shop.php?shopID=<?php echo $encriptedShopID;?>';</script>
+		<script type="text/javascript">location.href='seller_view_all_products_in_shop.php?shopID=<?php echo $encriptedShopID;?>&shopcategoryID=<?php echo $encriptedShopcategoryID;?>';</script>
 		<?php
 	}
+	mysqli_close($con);
 ?>
