@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
   <head>
 		<title>Welcome to Zarurat.in | Your daily needs fulfiller</title>
@@ -65,7 +65,7 @@
 					<p>Your friend for all your daily requirements <br><br>
           More products arriving soon
           </p>
-					<button style="border-radius:10px;">Buy Now</button>
+					<button style="border-radius:10px; cursor: pointer;">Buy Now</button>
 				</div>
 			</section>
 		</header>
@@ -95,15 +95,15 @@
 
 		       <div class="shop_search_item ">
 			        <div class="shop_image">
-			        	<img style="width: 275px; height: 200px;" src="images/home_page_dairy.jpg">
-			        	<a href="#"><h3>Dairy Store</h3></a>
+			        	<a href="#"><img style="width: 275px; height: 200px;" src="images/home_page_dairy.jpg">
+			        	<h3>Dairy Store</h3></a>
 			        </div>
 		       </div>
 
 		       <div class="shop_search_item">
 			        <div class="shop_image">
-			        	<img style="width: 275px; height: 200px;" src="images/home_page_medical.jpg">
-			        	<a href="#"><h3>Medical Store</h3></a>
+			        	<a href="#"><img style="width: 275px; height: 200px;" src="images/home_page_medical.jpg">
+			        	<h3>Medical Store</h3></a>
 			        </div>
 		       </div>
 	       </div>
