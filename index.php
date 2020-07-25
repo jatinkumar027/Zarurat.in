@@ -61,15 +61,17 @@
         </div>
 
 				<div class="rightside">
-					<h1>Free shipping and online shopping: What you need to know</h1>
-					<p>Shopping online is that much better when you don’t have to pay for shipping.</p>
-					<button style="border-radius:10px;">Welcome</button>
+					<h1>Welcome to Zarurat.in</h1>
+					<p>Your friend for all your daily requirements <br><br>
+          More products arriving soon
+          </p>
+					<button style="border-radius:10px;">Buy Now</button>
 				</div>
 			</section>
 		</header>
 		<!-- adding browser and search box -->
 		<section class="main_content">
-      
+
 			<!-- adding shop categories -->
 		<div class="shop_container">
 
@@ -109,37 +111,34 @@
 		</section>
 		<!-- Footer Added -->
 		<footer class="contain">
-				<h1 style="color: white;">Zarurat</h1>
 				<div class="maker">
 					<div class="maken">
-						<h2>Website</h2>
 						<ul class="make_list">
-								<li>about</li>
+								<li>About</li>
 								<li>Blog</li>
 								<li>Careers</li>
 								<li>Report Fraud</li>
 								<li>Contact</li>
-						</ul>	
+						</ul>
 					</div>
 					<div class="maken">
-						<h2>For Items</h2>
-						<ul class="make_list"> 
+						<ul class="make_list">
+              <li>For Items</li>
 							<li>Code of Conduct</li>
 							<li>Community</li>
 							<li>Blogger Help</li>
 						</ul>
 					</div>
 					<div class="maken">
-						<h2>For Shops</h2>
 						<ul class="make_list">
 							<li>Claim your Listening</li>
-							<li>Shops Widgets</li>
+							<li>Shops</li>
+              <li>Widgets</li>
 							<li>Products For Shops</li>
-						</ul>		
+						</ul>
 					</div>
 					<div class="maken">
-						<h2>For You</h2>
-						<ul class="make_list"> 
+						<ul class="make_list">
 							<li>Privacy</li>
 							<li>Terms</li>
 							<li>Security</li>
@@ -147,19 +146,18 @@
 						</ul>
           </div>
 					<div class="maken">
-						<h2>Social</h2>
-						<ul class="make_list"> 
+						<ul class="make_list">
 							<li>Facebook</li>
 							<li>Twitter</li>
 							<li>Youtube</li>
-							<li>Instagram</li>	
-						</ul>	
+							<li>Instagram</li>
+						</ul>
 					</div>
 			</div>
 			<div class="line"></div>
 			<div class="take">
-				<h5>By continuing past this page, you agree to our Terms of Service, Cookie Policy, Privacy Policy and Content Policies. All trademarks are properties of their respective owners. 2008-2020 © Zarurat™ Media Pvt Ltd. All rights reserved.</h5>
-			</div>			
+				<p style="font-size: 11px;">By continuing past this page, you agree to our Terms of Service, Cookie Policy, Privacy Policy and Content Policies. All trademarks are properties of their respective owners. 2020 © Zarurat™ Media Pvt Ltd. All rights reserved.</p>
+			</div>
 		</footer>
   </body>
 </html>
