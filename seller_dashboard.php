@@ -9,59 +9,76 @@ if (!isset($_SESSION['email'])) {
   header('location: seller_home.php');
   exit;
 }
+
 if(isset($_POST['createshop']))
 {
   // Getting the values from the signup page using $_POST[] and cleaning the data submitted by the user.
-  $shopname = $_POST['shopname'];
-  $shopname = mysqli_real_escape_string($con, $shopname);
-
-  $shopopentime = $_POST['shopopentime'];
-  $shopopentime = mysqli_real_escape_string($con, $shopopentime);
-
-  $shopclosetime = $_POST['shopclosetime'];
-  $shopclosetime = mysqli_real_escape_string($con, $shopclosetime);
-
-  $shopaadhar = $_POST['shopaadhar'];
-  $shopaadhar = mysqli_real_escape_string($con, $shopaadhar);
-
-  $shoppan = $_POST['shoppan'];
-  $shoppan = mysqli_real_escape_string($con, $shoppan);
-
-  $shopminorder = $_POST['shopminorder'];
-  $shopminorder = mysqli_real_escape_string($con, $shopminorder);
-
-  $shopadd = $_POST['shopadd'];
-  $shopadd = mysqli_real_escape_string($con, $shopadd);
-
 	$shopcategory = $_POST['shopcategory'];
 	$shopcategory = mysqli_real_escape_string($con, $shopcategory);
 
-  $arr=array();
-  $arr=$_POST['ordertype'];
-  if(isset($arr[0]) && isset($arr[1]) ){
-      $shoppaymenttype="3";
-  }
-  elseif(isset($arr[0]))
-  {
-      $shoppaymenttype="1";
-  }
-  elseif (isset($arr[1])) {
-      $shoppaymenttype="2";
-  }
+  $shopName = $_POST['shopName'];
+  $shopName = mysqli_real_escape_string($con, $shopName);
+
+  $shopNumber = $_POST['shopNumber'];
+  $shopNumber = mysqli_real_escape_string($con, $shopNumber);
+
+  $city = $_POST['city'];
+  $city = mysqli_real_escape_string($con, $city);
+
+  $state = $_POST['state'];
+  $state = mysqli_real_escape_string($con, $state);
+
+  $pincode = $_POST['pincode'];
+  $pincode = mysqli_real_escape_string($con, $pincode);
+
+  $gstNumber = $_POST['gstNumber'];
+  $gstNumber = mysqli_real_escape_string($con, $gstNumber);
+
+  $openHour = $_POST['openHour'];
+  $openHour = mysqli_real_escape_string($con, $openHour);
+
+  $closeHour = $_POST['closeHour'];
+  $closeHour = mysqli_real_escape_string($con, $closeHour);
+  
+  $openMin = $_POST['openMin'];
+  $openMin = mysqli_real_escape_string($con, $openMin);
+
+  $closeMin = $_POST['closeMin'];
+  $closeMin = mysqli_real_escape_string($con, $closeMin);
+
+  $openClock = $_POST['openClock'];
+  $openClock = mysqli_real_escape_string($con, $openClock);
+
+  $closeClock = $_POST['closeClock'];
+  $closeClock = mysqli_real_escape_string($con, $closeClock);
+  
+  $openTime = $openHour.":".$openMin." ".$openClock;
+  $closeTime = $closeHour.":".$closeMin." ".$closeClock; 
+
+  $bankName = $_POST['bankName'];
+  $bankName = mysqli_real_escape_string($con, $bankName);
+  
+  $ifscCode = $_POST['ifscCode'];
+  $ifscCode = mysqli_real_escape_string($con, $ifscCode);
+  
+  $accHolderName = $_POST['accHolderName'];
+  $accHolderName = mysqli_real_escape_string($con, $accHolderName);
+  
+  $accNumber = $_POST['accNumber'];
+	$accNumber = mysqli_real_escape_string($con, $accNumber);
 
   //getting seller id from session
   $sellerid=$_SESSION['seller_id'];
 
-  $query = "INSERT INTO seller_shop(seller_id, shop_category_id, shop_name, shop_add, aadhar_number, pan_number, open_time, close_time, min_order, payment_mode_id)VALUES
-  ('" . $sellerid . "','" . $shopcategory . "','" . $shopname . "','" . $shopadd . "','" . $shopaadhar . "','" . $shoppan . "','" . $shopopentime . "','" . $shopclosetime . "','" . $shopminorder . "','" . $shoppaymenttype . "')";
+  $query = "INSERT INTO `seller_shop` (`shop_id`, `seller_id`, `shop_category_id`, `shop_name`, `shop_number`, `city`, `state`, `pincode`, `gst_number`, `open_time`, `close_time`, `bank_name`, `ifsc_code`, `account_holder_name`, `account_number`) VALUES (NULL, '$sellerid', '$shopcategory', '$shopName', '$shopNumber', '$city', '$state', '$pincode', '$gstNumber', '$openTime', '$closeTime', '$bankName', '$ifscCode', '$accHolderName', '$accNumber')";
   mysqli_query($con, $query) or die(mysqli_error($con));
   $user_id = mysqli_insert_id($con);
   header('location: seller_view_shops.php');
 	//if values inserted correctly seller redirected to view shops page
 }
 
-	mysqli_close($con);
-	//connection is closed
+	
+	
 ?>
 
 <!-- View -->
@@ -83,71 +100,193 @@ if(isset($_POST['createshop']))
 
 	<?php require 'includes/seller_header.php' ?>
 	<div class="wrapper">
-		<div class="register-shop-btn">
-			<button  onclick="showShopForm()">Register your Shop</button>
-		</div>
-    <!-- Radio Buttons-->
-        <div class="shop-form-container" >
-        	<form id="shop-info" method="post">
-        		<div class="choose-shop-type">
-                    <div><h1>Choose Category of Shop</h1></div>
-        			<div class="radio-toolbar">
-	    					<input type="radio" id="radiokirana" name="shopcategory" value="1" checked>
-	    						<label for="radiokirana">Kirana</label>
+    <?php
+    $sql = "SELECT * FROM seller_shop WHERE seller_id='$_SESSION[seller_id]'";
+    $result = mysqli_query($con,$sql) or die(mysqli_error($con));
+     if($result->num_rows > 0 && !isset($_GET['register']))
+    header('Location: seller_view_shops.php');
+    ?>
+    		<div class="register-shop-btn">
+    			<button  onclick="showShopTypes()">Register your Shop</button>
+    		</div>
+        
+        <!-- Radio Buttons-->
+            <div class="shop-form-container">
+              	<form id="shop-info" method="post">
+              		<div class="shop-type-container">
+                      <div style="display:flex;justify-content: flex-end;">
+                        <i  style="font-size: 20px;" class="fa fa-shopping-bag"></i>&nbsp; Shop Category
+                      </div>
+                      <div class="shops-type">
+                    			<div class="radio-toolbar">
+            	    					<input type="radio" id="radiokirana" name="shopcategory" value="1" checked>
+            	    						<label for="radiokirana">Kirana</label>
 
-	    					<input type="radio" id="radiodairy" name="shopcategory" value="2">
-	    						<label for="radiodairy">Dairy</label>
+            	    					<input type="radio" id="radiodairy" name="shopcategory" value="2">
+            	    						<label for="radiodairy">Dairy</label>
 
-	    					<input type="radio" id="radiomedicine" name="shopcategory" value="3">
-	    						<label for="radiomedicine">Medicine</label>
-					    </div>
-            </div>
-        		<div class="shop-details" >
-        			<!-- shop form -->
-                    <div>
-                        <div>
-                            <input class="input-style" type="text" placeholder="Shop name" name="shopname">
-                        </div>
-                        <div>
-                            <input class="input-style" type="text" placeholder="Shop Address" name="shopadd">
-                        </div>
-                        <div>
-                             <input class="input-style" type="time" placeholder="Open Time" name="shopopentime">
-                        </div>
-                        <div>
-                             <input class="input-style" type="time" placeholder="Close Time" name="shopclosetime">
-                        </div>
-                        <div>
-                             <input class="input-style" type="text" placeholder="Aadhar Card" name="shopaadhar">
-                        </div>
-                        <div>
-                             <input class="input-style" type="text" placeholder="PAN Card" name="shoppan">
-                        </div>
-                        <div>
-                             <input class="input-style" type="number" placeholder="Minumum cost of order" name="shopminorder">
-                        </div>
-                        <div>
-                            <label style="margin-top: 15px;">Mode of Payment</label>
-                            <div style="display: flex; flex-direction: row">
-                                <input style="width: 25px; height: 25px; margin:5px; margin-left: 25px;" type="checkbox" name="ordertype[0]" value="1" >
-                                <label>Cash</label>
-                                <input style="width: 25px; height: 25px; margin:5px; margin-left: 25px;" type="checkbox" name="ordertype[1]" value="2" >
-                                <label>Online</label>
+            	    					<input type="radio" id="radiomedicine" name="shopcategory" value="3">
+            	    						<label for="radiomedicine">Medical</label>
+
+            					    </div>
+                      </div> 
+                      <div class="div-btn-container">
+                         <div onclick="showShopDetails()" class="div-btn">Next <i class="fa fa-arrow-right"></i></div>
+                      </div> 
+                  </div>
+              		<div class="shop-details">
+                      <div style="display:flex;justify-content: space-between;">
+                        <label><i id="back-icon" onclick="goBackToShopType()"class="fa fa-arrow-left"></i></label> 
+                        <label><i style="font-size: 20px;" class="fa fa-edit"></i> &nbsp;Shop Details</label>
+                      </div>
+                      <div>
+                          <div>
+                            <input class="input-style" type="text" name="shopName" placeholder="Shop Name">
+                          </div>
+                          <div>
+                            <input class="input-style" type="text" name="shopNumber" placeholder="Shop No" required>
+                          </div>
+                          <div>
+                            <input class="input-style" type="" name="city" placeholder="City" required>
+                          </div>
+                          <div>
+                            <select class="state-select" name="state" required="true" >
+                              <option value disabled selected>--Select State--</option>
+                              <option value="Andhra Pradesh">Andhra Pradesh</option>
+                              <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                              <option value="Assam">Assam</option>
+                              <option value="Bihar">Bihar</option>
+                              <option value="Chhattisgarh">Chhattisgarh</option>
+                              <option value="Delhi">Delhi</option>
+                              <option value="Goa">Goa</option>
+                              <option value="Gujarat">Gujarat</option>
+                              <option value="Haryana">Haryana</option>
+                              <option value="Himachal Pradesh">Himachal Pradesh</option>
+                              <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                              <option value="Jharkhand">Jharkhand</option>
+                              <option value="Karnataka">Karnataka</option>
+                              <option value="Kerala">Kerala</option>
+                              <option value="Madhya Pradesh">Madhya Pradesh</option>
+                              <option value="Maharashtra">Maharashtra</option>
+                              <option value="Manipur">Manipur</option>
+                              <option value="Meghalaya">Meghalaya</option>
+                              <option value="Mizoram">Mizoram</option>
+                              <option value="Nagaland">Nagaland</option>
+                              <option value="Odisha">Odisha</option>
+                              <option value="Punjab">Punjab</option>
+                              <option value="Rajasthan">Rajasthan</option>
+                              <option value="Sikkim">Sikkim</option>
+                              <option value="Telangana">Telangana</option>
+                              <option value="Tripura">Tripura</option>
+                              <option value="Uttar Pradesh">Uttar Pradesh</option>
+                              <option value="Uttarakhand">Uttarakhand</option>
+                              <option value="West Bengal">West Bengal</option>
+                            </select>
+                          </div>
+                          <div>
+                            <input class="input-style" type="number" name="pincode" placeholder="Pincode" required>
+                          </div>
+                          <div>
+                            <input class="input-style"   placeholder="INDIA" disabled>
+                          </div>
+                          <div>
+                            <input class="input-style" type="text" name="gstNumber" placeholder="GST Number" required>
+                          </div>
+                          <div>
+                            <div class="time-container">
+                              <label>Shop Open Time : &nbsp;</label>
+                              <select name="openHour" required>
+                                <option value="01">01</option>
+                                <option value="02">02</option>
+                                <option value="03">03</option>
+                                <option value="04">04</option>
+                                <option value="05">05</option>
+                                <option value="06">06</option>
+                                <option value="07">07</option>
+                                <option value="08">08</option>
+                                <option value="09">09</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                              </select>
+                              <select name="openMin" required>
+                                <option>00</option>
+                                <option>30</option>
+                              </select>
+                              <select name="openClock" required>
+                                <option>AM</option>
+                                <option>PM</option>
+                              </select>
                             </div>
-                        </div>
-                        <div>
-                            <input style="margin-top: 15px;" id="create-button" type="submit" value="Create Shop" name="createshop" >
-                        </div>
+                            <div class="time-container">
+                              <label>Shop Close Time : &nbsp;</label>
+                              <select name="closeHour" required>
+                                <option value="01">01</option>
+                                <option value="02">02</option>
+                                <option value="03">03</option>
+                                <option value="04">04</option>
+                                <option value="05">05</option>
+                                <option value="06">06</option>
+                                <option value="07">07</option>
+                                <option value="08">08</option>
+                                <option value="09">09</option>
+                                <option value="10">10</option>
+                                <option value="11">11</option>
+                                <option value="12">12</option>
+                              </select>
+                              <select name="closeMin" required>
+                                <option value="00">00</option>
+                                <option value="30">30</option>
+                              </select>
+                              <select name="closeClock" required>
+                                <option value="AM">AM</option>
+                                <option value="PM">PM</option>
+                              </select>
+                            </div>   
+                          </div>
+                       </div>   
+                       <div class="div-btn-container">
+                         <div onclick="showBankDetails()" class="div-btn">Next <i class="fa fa-arrow-right"></i></div>
+                      </div> 
+                  </div>
+                  <div class="bank-details">
+                    <div>
+                      <div style="display:flex;justify-content: space-between;">
+                        <label><i id="back-icon" onclick="goBackToShopDetails()"class="fa fa-arrow-left"></i></label>
+                        <label><i style="font-size: 20px;" class="fa fa-bank"></i>&nbsp; Bank Details</label>
+                      </div>
+                      
+                      <div>
+                          <input class="input-style" type="text" name="bankName" placeholder="Bank Name" required>
+                      </div>
+                      <div>
+                          <input class="input-style" type="text" name="ifscCode" placeholder="IFSC code" required>
+                      </div>
+                      <div>
+                          <input class="input-style" type="text" name="accHolderName" placeholder="Account Holder Name" required>
+                      </div>
+                      <div>
+                          <input class="input-style" type="number" name="accNumber" placeholder="Account Number" required>
+                      </div>
+                      <div >
+                        <input id="create-button" type="submit" name="createshop" value="Create Shop">
+                      </div>
                     </div>
-        		</div>
-        	</form>
-        </div>
+                  </div>
+              	</form>
+            </div>
 
 	</div>
+  <div class="info">
 
+  </div>
 	<?php require 'includes/seller_home_footer.php'; ?>
 
 </body>
 </html>
+<?php
+mysqli_close($con);
+//connection is closed
+?>
 
 

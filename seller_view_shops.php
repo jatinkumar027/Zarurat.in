@@ -25,7 +25,7 @@
 	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="public/css/seller_header.css">
-	<link rel="stylesheet" type="text/css" href="public/css/seller_view_shops.css">
+	<link rel="stylesheet" type="text/css" href="public/css/seller_view_shop.css">
 	<link rel="stylesheet" type="text/css" href="public/css/seller_home_footer.css">
 	<script type="text/javascript" src="public/javascript/seller_header.js"></script>
 	<script type="text/javascript">
@@ -51,35 +51,37 @@
 
 			<div class="allshops">
 			<?php
+			$i=0;
 			//printing all the details in view shop page. All the data of all the shops of a particular seller will be shown in this page
 		    	while($row = $result->fetch_assoc())
 			   {
+				$shopID = base64_encode($row['shop_id']);
+				$shopcategoryID = base64_encode($row['shop_category_id']);
 				?>
 
-				<div class="shop-details">
+				<div class="shop-details" onmouseover="document.getElementById('delete-icon<?php echo $i;?>').style.color='white';" onmouseout="document.getElementById('delete-icon<?php echo $i;?>').style.color='red';">
 					<div class="shopname">
-						<label><?php echo $row['shop_name'];?></label>
-						<label><a onclick="return shopDeletionConfirmation()" href="seller_view_shops.php?shopID=<?php echo $row['shop_id']; ?>"><i class="fa fa-trash"></i></a></label>
+						<label><?php echo strtoupper($row['shop_name']);?></label>
+						<label><a onclick="return shopDeletionConfirmation()" href="seller_view_shops.php?shopID=<?php echo $row['shop_id']; ?>"><i id="delete-icon<?php echo $i; ?>" class="fa fa-trash"></i></a></label>
+					</div>
+					<div class="manage">
+						<label><a href="manage_orders.php?shopID=<?php echo $shopID;?>"><i class="fa fa-archive"></i>&nbsp;Manage Orders</a></label>
 					</div>
 					<div class="shoptype">
-						<label><a href=""><i class="fa fa-truck icon-style"></i>&nbsp;View Orders</a></label>
+						<label><a href=""><i class="fa fa-truck icon-style"></i>&nbsp;View Order History</a></label>
 						<label>
 							<?php echo $row['shop_category_name'];?>&nbsp;
 							<i class="fa fa-shopping-bag icon-style"></i>
 						</label>
-						
 					</div>
 					<div class=view>
-						<?php
-							$shopID = base64_encode($row['shop_id']);
-							$shopcategoryID = base64_encode($row['shop_category_id']);
-						?>
-						<a href="seller_view_all_products_in_shop.php?shopID=<?php echo $shopID; ?>"><i class="fa fa-eye icon-style"></i>&nbsp;View Products</a>
+						<a href="seller_view_all_products_in_shop.php?shopID=<?php echo $shopID; ?>&shopcategoryID=<?php echo $shopcategoryID; ?>"><i class="fa fa-eye icon-style"></i>&nbsp;View Products</a>
 						<a href="seller_all_products_list.php?shopID=<?php echo $shopID; ?>&shopcategoryID=<?php echo $shopcategoryID; ?>">Add more items &nbsp;<i class="fa fa-plus-square icon-style"></i></a>
 					</div>
 				</div>
 
 				<?php
+				$i++;
 			}
 			?>
 			</div>

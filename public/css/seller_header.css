@@ -5,13 +5,17 @@
 	top: 50px;
 	box-shadow: 0px 0px 3px 0px black; 
 	display: none;
+	z-index: 2;
+	color : white;
 	background: white;
+	position: fixed;
 }
 .profile-menu div
 {
 font-size: 15px;
 display: flex;
 flex-direction: column;
+
 
 }
 .profile-menu div a,.profile-menu div label
@@ -22,11 +26,13 @@ flex-direction: column;
 }
 .profile-menu div a:hover
 {
-	background: #dfe6e9;
+	background:  rgba(0, 153, 130 ,0.8);;
+	color : white;
 }
 .profile-menu div label:hover
 {
-	background: #dfe6e9;
+	background:  rgba(0, 153, 130 ,0.8);
+	color : white;
 }
 
 
@@ -34,7 +40,7 @@ flex-direction: column;
 .change-password-popup
 {
 	position: absolute;
-	height: 250px;
+	height: 270px;
 	width: 400px;
 	left: 50%;
 	top: 50%;
@@ -44,6 +50,8 @@ flex-direction: column;
 	opacity:1;
 	box-shadow: 0px 0px 4px 0px #2d3436;
 	display: none;
+	position: fixed;
+	z-index: 3;
 }
 .change-password-popup form
 {
@@ -54,6 +62,7 @@ flex-direction: column;
 	width: 100%;
 	align-content: space-evenly;
 	height: 200px;
+	margin-top: 5px;
 
 }
 .change-password-popup form input
@@ -68,16 +77,16 @@ flex-direction: column;
 .change-password-popup form input:focus
 {
 	border: 2px solid transparent;
-	box-shadow: 0px 2px 4px 0px #0984e3;
+	box-shadow: 0px 2px 4px 0px #169483;
 	outline: none;
 }	
 #update-btn
 {
-	border: 2px solid #3498db;
+	border: 2px solid #169483;
 }
 #update-btn:hover
 {
-	background: #3498db;
+	background: #169483;
 	color:white;
 }
 #update-btn:focus
@@ -88,16 +97,29 @@ flex-direction: column;
 .cancel-icon-container
 {		
 	display: flex;
-	justify-content:flex-end;
+	justify-content:space-between;
+	margin-bottom : 15px;
 
 }
-.cancel-icon-container img
+.cancel-icon-container label
 {
-	height: 25px;
-	width: 25px;
-	cursor: pointer;
-	margin: 4px;
+	
+	margin-right: 10px;
+	margin-left : 20px;
+	margin-top : 5px;
+	font-size : 20px;
+	font-family : 'Roboto', Sans-serif;
 }
+.cancel-icon-container label i
+{
+	cursor: pointer;
+	font-size : 20px;
+}
+.cancel-icon-container label i:hover
+{
+	color : #3498db;
+}
+
 
 
 .logged-in-header
@@ -105,7 +127,10 @@ flex-direction: column;
 	display: flex;
 	justify-content: space-between;
 	height: 50px;
-	background: #34495e;
+	background : linear-gradient(57deg, rgba(26, 66, 127 ,1), rgba(0, 153, 130 ,1), rgba(51, 51, 51 ,1));
+	position: fixed;
+	width: 100%;
+	z-index: 2;
 }
 .logged-in-header div
 {
@@ -113,6 +138,7 @@ flex-direction: column;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
 }
 
 .left a
@@ -125,7 +151,7 @@ flex-direction: column;
 }
 .left a:hover
 {
-	background: #95a5a6;
+	background: rgba(0, 153, 130 ,0.5);
 }
 .right a
 {
@@ -139,7 +165,7 @@ flex-direction: column;
 
 .right a:hover
 {
-	background: #95a5a6;
+	background: rgba(0, 153, 130 ,0.5);
 }
 
 .right label
@@ -152,5 +178,9 @@ flex-direction: column;
 }
 .right label:hover
 {
-	background: #95a5a6;
+	background: rgba(0, 153, 130 ,0.5);
+}
+#google_translate_element
+{
+	height: 25px;
 }

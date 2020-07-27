@@ -12,7 +12,7 @@ The solution is more digitization and hyper localization of mentioned shops with
 # File Organisation
 
 ## includes
-includes folder contain the connection file as common.php and other files such as header and footer which are common to all other associated files.
+includes folder contain the connection file as common.php and other files such as header and footer which are common to all other associated files
 
 ## public
 
@@ -20,20 +20,15 @@ public folder contains two sub folders as:
 
 ####  public/css
 
->This folder contain all the css files needed for the software.
+>This folder contain all the css files needed for the software
 
+#### public/java
 
-#### public/images/kirana
-
->This folder contain all the images of the kirana shop product.
-
-#### public/javascript
-
->This folder contain all the java script files uses in the software.
+>This folder contain all the java script files uses in the software
 
 ## master
 
-This folder contain all the php files required in this software.
+This folder contain all the php files required in this software
 
 
 # Configuration
@@ -42,136 +37,68 @@ This folder contain all the php files required in this software.
 ### System Requirement
 
 #### Desktop
-	
- - Processor(CPU) -  Anytype of processor works(Intel, AMD etc.)
- - Memory - Minimum 2 GB RAM
- - Storage - Minimum 128 GB Internal Storage Drive
- - Operating System - Linux, Window, MacOS
- - Browser required - Any type of browser able to run on any of the above mentioned platform.
-
+	1.Processor(CPU)- Anytype of processor works(Intel\AMD)
+	2.Memory- minimum 4 GB RAM
+	3.Storage-Minimum 128 GB Internal Storage Drive
+	4.Operating System:- Linux, Window, MacOS
+	5.Browser required(Any).
 #### Mobile
-
- - Operating System - Android, iOS.
-         
-### Software Requirment
-
-	To run the software in local server types of server recommended
-
- - MySQL Server
- - Apache Server
-
-#### Browser Support
-
+	1. Operating System:- Android, Apple IOS.        
+### Software Requirment:-	
+	1. MySQL Server
+	2. Apache Server
+	3. Browser Support:-
 	
-At the moment, we aim to support all major web browsers. Any issue in the browsers listed below should be reported as a bug.
-
-##### Recommended Browsers
-
- - Internet Explorer 10+
- - Microsoft Edge 14+
-- Safari 6+
-- Firefox(Current - 1) and Current versions
-- Chrome(Current - 1) and Current versions
-- Opera(Current - 1) and Current versions
-- Safari iOS 7.0+
-- Android 6.0+
-
-(Current -1) and Current means that we support the current stable version of the browser and version that precedes it.
+		3.1. At the moment, we aim to support all major web browsers. Any issue in the browsers listed below should be reported as a bug:
+			3.1.1. Internet Explorer 10+
+			3.1.2. Microsoft Edge 14+
+			3.1.3. Safari 6+
+			3.1.4. Firefox(Current - 1) and Current versions
+			3.1.5. Chrome(Current - 1) and Current versions
+			3.1.6. Opera(Current - 1) and Current versions
+			3.1.7. Safari IOS 7.0+
+			3.1.8. Android 6.0+
+		(Current -1) and Current means that we support the current stable version of the browser and version that precedes it.
 
 ### Installation Instruction:-
-  
-#### Local
+      
+      Visit the hosted link directly.(it will be provided when its done.)
 
-- Download the files from this repository.
-- Download the local server (for example xampp) and do the following.
-- Go to  C: /xampp/htdocs/... paste the downloaded file here in a folder zarurat.in
-#### Public
-> Hosted Link will be provided once the Web Application will be released and furnished to Phase 1.
+### Operating Instructions:-
+      1. By opening the hosting link of the site, the user see the Welcome page of the site.
+      2. Welcome Site:-
+	        2.1. It contains a link for Login and Register/Sign Up for both Buyer and Seller.
 
-### Operating Instructions
+#### Seller Side
 
-#### Local
-
-- Open any browser and turn on the APACHE and MySQL server on from the Xampp Control Panel.
-- Copy the this url to access the website localhost/zarurat.in/ and press enter.
-
-
-#### Public
-
- - Hosted Link will be provided once the Web Application will be released and furnished to Phase 1.
- - By opening the hosting link of the site, the user will come across the following:
- - Welcome Site
-     > Buyer and Seller can Register / Login from this page and on the particular action Buyer or Seller will be redirected to their respective portals 
-
-- Seller Portal
-
-  > If Seller is going to register/sign up then he/she have to give these information
-  
-- Sign Up
-  - Name.
-  - Contact Number
-  - Email Address
-  - Pincode
-  - House Number
-  - Area
-  - City
-  - State
-  - Password
-  
-  >After the Sign up process, seller will be redirected to his/her dashboard where seller will register their shop(s).
-  >
-  > For the Shop Registration, Seller will provide details about his/her shop.
-  
-  - Shop Category (Kirana, Dairy, Medical)
-  - Shop Name
-  - Shop Address
-  - Open/Closed timing
-  - Aadhar Card
-  - Minimum Cost if Order.
-  - Mode of Payment(Cash/Online Payment)
-
-- Regarding the type of the shop, seller will select the items from the list of products provided prefilled from the database to avoid inconvenience. The seller will only provide the following reuqired details about the product.
-    - Weight 
-    - MRP
-    - Selling Price
-    - Status ( Active / Inactive )
- - At last, by accepting all the policies, it will be live on the dashboard of the Seller Portal as well as the active products and the active shop on the buyer portal.
-- A seller can add more than one shops on his dashboard (if any).
+	        2.2. If Seller is going to register/sign up then he/she have to give these information:-
+			2.2.1. Name.
+			2.2.2. Contact Number
+			2.2.3. Email Address
+			2.2.4. Password
+			2.2.5. Permanent Address
+			2.2.6. State
+			2.2.7. Pincode
+		2.3. After the sigh Up process, seller will be relocated to dashboard where seller will be going to register there shops.
+		2.4. For the registeration of shop, Seller will again going to give detail about there shop and its type(Kirana,Dairy,Bakery,Medical).
+			2.4.1. Shop Name
+			2.4.2. Shop Address
+			2.4.3. Open/Closed timing
+			2.4.4. Aadhar Card
+			2.4.5. Minimum Cost if Order.
+			2.4.6. Mode of Payment(Cash/Online Payment)
+		2.5. Regarding to there type of the shop, seller will select the items from the list which is given by developers, after selecting the items seller initialize the values which is given below  
+			2.5.1. Weight
+			2.5.2. Mode of packaging
+			2.5.3. MRP
+			2.5.4. Selling Price
+			2.5.5. Expiration date(Medicine and dairy products)
+		2.6. At last, by accepting all the policies, it will be kive on the dashboard on seller side simultaneously on the buyer side portel.
+		2.7. If a seller have too many shops, then seller can have a option to add another shop on the same account again.
 
 #### Buyer Side
-- If buyer is going to register/ sign up then buyer have to give these information.
-	 > If Seller is going to register/sign up then he/she have to give these information
-- Sign Up
-  - Name.
-  - Contact Number
-  - Email Address
-  - Pincode
-  - House Number
-  - Area
-  - City
-  - State
-  - Password
-
-- After the Sign up process, buyer will be redirected to Buyer home page of the website.
-
-- The home page will be featured with shops that will fall in the Buyer's Location.
-
-- The Buyer will select the shop from where he/she wants to buy the items and then he/she will be redirected to select the products offered by the seller of the shop.
-
-- Buyer will select the products that he/she may want to buy and then he/she will be redirected to the orders page.
-
-- Order request will be sent to the seller. After accepting the request, the order will be placed and hence the item will be delivered at the buyer's home.
-
-- The Seller will Update the Option in Orders as delivered and hence the order is successfully completed.
-
-## Software Flow
-
-![Software Flow](https://github.com/jatinkumar027/Zarurat.in/blob/Development/Flow%20Images/ZARURAT_IN%20UML.png?raw=true)
-
-## Database Flow
-
-![Database Flow](https://github.com/jatinkumar027/Zarurat.in/blob/Development/Flow%20Images/Zarurat%20v2(1).png?raw=true)
-
+    Yet to be Developed.
+    
 ### Known Bugs
     Some of the links are not working yet because that page regarding to the link is not completed.
 

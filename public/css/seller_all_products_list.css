@@ -8,13 +8,14 @@
 .product
 {
 	display: flex;
-	border : 1.5px solid black;
+	border : 0.5px solid black;
 	border-radius: 10px;
 	padding: 15px;
 	margin : 5px;
 	width: 98%;
 	justify-content: space-evenly;
 	align-items: center;
+	position: relative;
 }
 .options
 {
@@ -54,13 +55,13 @@
 #add-items-btn
 {
 	border-radius: 5px;
-	height: 30px;
-	border : 2px solid #3498db;
+	height: 40px;
+	border : 2px solid #169483;
 	cursor: pointer;
 }
 #add-items-btn:hover
 {
-	background: #3498db;
+	background: #169483;
 	color: white;
 }
 #add-items-btn:focus
@@ -88,3 +89,105 @@
 	align-items: center;
 	font-size: 35px;
 }
+.page-info
+{
+	display: flex;
+	justify-content: space-between; 
+	position: fixed;
+	z-index: 1;
+	height: 40px;
+	background:linear-gradient(57deg, rgba(26, 66, 127 ,0.8), rgba(0, 153, 130 ,0.8), rgba(51, 51, 51 ,0.8));
+	color : white;
+	width: 100%;
+	align-items: center;
+	margin-top: 50px;
+	flex : 1;
+}
+.page-info h4
+{
+	margin-left: 15px;
+	margin-right: 20px;
+}
+.page-info h4:nth-child(2) 
+{
+	display: flex;
+	justify-content : center;
+	align-items: center;
+}
+form
+{
+	margin-top: 95px;
+}
+.product-message
+{
+	position: absolute;
+	height: 35px;
+	width : 50px;
+	background: green;
+	color : white;
+	font-size : 10px;
+	top : 0;
+	right : 10px;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.search-container
+{
+	display: flex;
+	flex : 1;
+	justify-content: center;
+}
+.search-box
+{
+	width : 80%;
+	height: 35px;
+	border : 1px solid black;
+	border-radius : 5px;
+	padding-left: 5px;
+}
+.search-box:focus
+{
+	outline : none;
+}
+.search-btn
+{
+	height: 35px;
+	width: 50px;
+	border : 1px solid black;
+	margin-left: 3px;
+	border-radius : 5px;
+	cursor : pointer;
+}
+.search-btn i
+{
+	font-size: 18px;
+}
+.search-btn:focus
+{
+	outline : none;
+}
+.left-pad
+{
+	display: flex;
+	flex : 0.3;
+}
+.right-pad
+{
+	display: flex;
+	flex : 0.3;
+}
+#select-category-option
+{
+	border : 1px solid black;
+	margin-right : 3px;
+	border-radius : 5px;
+}
+#select-category-option:focus
+{
+	outline : none;
+}
+

@@ -1,0 +1,188 @@
+
+*
+{
+	margin :0;
+	padding: 0;
+}
+a
+{
+	text-decoration: none;
+}
+.Main-wrapper
+{
+	margin-bottom: 20px;
+}
+.inner-wrapper
+{
+	display: flex;
+	justify-content:space-evenly;
+	align-items: center;
+	margin-top: 20px;
+}
+.log
+{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 48%;
+}
+#back-icon
+{
+	font-size: 25px;
+	cursor: pointer;
+}
+#back-icon:hover
+{
+	color:#3498db;
+
+}
+#back-icon-container
+{
+	display: none;
+}
+.tag-line
+{
+	display: flex;
+	justify-content: center;
+	flex-direction: column;
+	align-items: center;
+	background:  linear-gradient(to right, #3498db, #2ecc71);
+
+}
+.log button
+{
+	height: 50px;
+	width: 180px;
+	background: #169483;
+	color: white;
+	font-size: 17px;
+	border:none;
+	border:2px solid #169483;
+	cursor: pointer;
+}
+.log button:hover
+{
+	border:2px solid #169483;
+	background: white;
+	color: black;
+}
+.log button:focus
+{
+	outline: none;
+}
+.line
+{
+	height: 550px;
+	width: 2px;
+	background: #bdc3c7;
+}
+.help
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 300px;
+	width: 48%;
+
+}
+.help button
+{
+	height: 50px;
+	width: 180px;
+	background: #3498db;
+	color: white;
+	font-size: 17px;
+	border:none;
+	border:2px solid #95a5a6;
+	cursor: pointer;
+}
+#signin-form,#signup-form
+{
+	display: none;
+}
+.help button:hover
+{
+	border:2px solid #3498db;
+	background: white;
+	color: black;
+}
+.help button:focus
+{
+	outline: none;
+}
+.form-container
+{
+	width: 100%;
+}
+.form-container form
+{
+	display: flex;
+	width: 100%;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	align-content: center;
+}
+.form-container form div
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+select
+{
+	height: 40px;
+	border:2px solid #7f8c8d;
+	margin-top: 30px;
+	font-size: 17px;
+	width: 80%;
+}
+select:focus
+{
+	outline: none;
+}
+.input-style
+{
+	width: 80%;
+	height: 30px;
+	border:2px solid #7f8c8d;
+	margin-top: 30px;
+	border-top: none;
+	border-left: none;
+	border-right: none;
+	padding-left: 5px;
+	font-size: 17px;
+}
+.input-style:focus
+{
+	outline:none;
+	border-bottom: 2px solid #3498db;
+	transition: border linear 500ms;
+}
+.submit-style
+{
+	width: 80%;
+	height: 40px;
+	margin-top: 30px;
+	margin-right: 5px;
+	margin-left: 5px;
+	cursor: pointer;
+	font-size: 17px;
+	border:2px solid #169483;
+	border-radius: 5px;
+}
+.or
+{
+	margin :30px 0px;
+}
+.submit-style:focus
+{
+	outline: none;
+
+}
+.submit-style:hover
+{
+	color: white;
+	background: #169483;
+}

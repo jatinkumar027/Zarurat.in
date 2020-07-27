@@ -1,0 +1,17 @@
+#login-panel .panel-footer{
+    font-weight:normal;
+}
+
+header{
+  display: flex;
+}
+
+#content{
+  display: flex;
+  margin-top: 90px;
+  justify-content: center;
+}
+#login-panel{
+  display: flex;
+  justify-content: center;
+}

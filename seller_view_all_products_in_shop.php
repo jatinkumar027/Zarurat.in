@@ -9,6 +9,7 @@
 		exit;
 	}
 	//showing all products in the selected shop
+	$encriptedShopcategoryID = $_GET['shopcategoryID'];
 	$encriptedShopID = $_GET['shopID'];
 	$shopID = base64_decode($_GET['shopID']);
 	$sql = "SELECT * FROM shop_inventory JOIN products JOIN product_type on shop_inventory.product_id=products.product_id AND products.product_type_id=product_type.product_type_id WHERE shop_inventory.shop_id='$shopID'";
@@ -32,6 +33,14 @@
 </head>
 <body>
 <?php include 'includes/seller_header.php'; ?>
+	<?php
+		if(isset($_SESSION['message']) && isset($_SESSION['color']))
+		{
+			echo "<script>show_success('$_SESSION[color]');timer_on();</script>";
+			array_pop($_SESSION);
+			array_pop($_SESSION);
+		}
+	?>
 	
 	<div class="wrapper">
 	<?php
@@ -42,18 +51,20 @@
 			<!-- product -->
 		<table>
 			<tr>
-				<th>S No</th>
+				<th>S. No.</th>
 				<th>Thumbnail</th>
 				<th style="width: 15%;">Name</th>
 				<th>Brand</th>
 				<th>Type</th>
 				<th>
-					<div class="options">
-						<label>MRP</label>
-						<label>SP</label>
-						<label>Quantity</label>
+					<div style="border: none;" class="options">
+						<label>MRP&nbsp;(₹)</label>
+						<label>Selling<br/>Price&nbsp;(₹)</label>
+						<label>Weight<br/>Volume</label>
+						<label>Unit</label>
 						<label>Status</label>
-						<label>Toggle</label>
+						<label>Toggle<br/>Status</label>
+						<label>Update</label>
 						<label>Delete</label>
 					</div>
 				</th>
@@ -63,6 +74,7 @@
 		
 				<?php
 				$i=1;
+				$num=1;
 				while($row = $result->fetch_assoc())
 				{
 					
@@ -80,11 +92,33 @@
 							while($row2 = $result2->fetch_assoc())
 							{
 							?>
-
+						<form id="option-form<?php echo $num;?>"  action="seller_view_all_products_in_shop.php?shopID=<?php echo $_GET['shopID'];?>&update=true&optionID=<?php echo $row2['option_id'];?>&shopcategoryID=<?php echo $encriptedShopcategoryID;?>" method="post">
 							<div class="options">
-								<label><?php echo $row2['product_mrp']."₹"; ?></label>
-								<label><?php echo $row2['product_sp']."₹"; ?></label>
-								<label><?php echo $row2['product_quantity']." ".$row2['product_wt_unit_name']; ?></label>
+								
+								<label>
+									<input class="input-style" type="number" value="<?php echo $row2['product_mrp']; ?>" name="mrp" disabled="true">
+								</label>
+								<label>
+									<input class="input-style" type="number" value="<?php echo $row2['product_sp']; ?>" name="sp" disabled="true">
+								</label>
+								<label>
+									<input style="width:100%;"class="input-style" type="number" value="<?php echo $row2['product_quantity']; ?>" name="weight" disabled="true">
+								</label>
+								<label>
+									<select class="unit-picker" name="unit" disabled="true">
+										<option value="<?php echo $row2['product_wt_unit_id'];?>"><?php echo $row2['product_wt_unit_name'];?></option>
+										<?php
+										if($row2['product_wt_unit_id']!='1')
+											echo "<option value='1'>Kg</option>";
+										if($row2['product_wt_unit_id']!='2')
+											echo "<option value='2'>g</option>";
+										if($row2['product_wt_unit_id']!='3')
+											echo "<option value='3'>L</option>";
+										if($row2['product_wt_unit_id']!='4')
+										 	echo "<option value='4'>mL</option>";
+										 ?>
+									</select>
+								</label>
 								<label>
 									<?php
 										if($row2['product_status']=='0')
@@ -101,24 +135,27 @@
 							 		if($row2['product_status']=='1') 
 							 		{
 							 			?>
-							 			<a href="seller_view_all_products_in_shop.php?shopID=<?php echo $_GET['shopID'];?>&status=<?php echo $row2['product_status'];?>&optionID=<?php echo $row2['option_id'];?>"><i class="fa fa-toggle-on toggle"></i></a>
+							 			<a href="seller_view_all_products_in_shop.php?shopID=<?php echo $_GET['shopID'];?>&status=<?php echo $row2['product_status'];?>&optionID=<?php echo $row2['option_id'];?>&shopcategoryID=<?php echo $encriptedShopcategoryID;?>"><i class="fa fa-toggle-on toggle"></i></a>
 							 			<?php
 							 		}
 							 		else
 							 		{
 							 			?>
-							 			<a href="seller_view_all_products_in_shop.php?shopID=<?php echo $_GET['shopID'];?>&status=<?php echo $row2['product_status'];?>&optionID=<?php echo $row2['option_id'];?>"><i class="fa fa-toggle-off toggle"></i></a>
+							 			<a href="seller_view_all_products_in_shop.php?shopID=<?php echo $_GET['shopID'];?>&status=<?php echo $row2['product_status'];?>&optionID=<?php echo $row2['option_id'];?>&shopcategoryID=<?php echo $encriptedShopcategoryID;?>"><i class="fa fa-toggle-off toggle"></i></a>
 							 			<?php
-
 							 		}
 						 			?>
+								</label>
+								<label>
+								<i onclick="enableInputField(<?php echo $num;?>);" class="fa fa-pencil edit-icon"></i>
+								<i onclick="return submitOptionForm(<?php echo $num;?>);"  class="fa fa-upload update-icon"></i>
 								</label>
 								<label>
 									<?php
 									if($result2->num_rows==1)
 									{
 										?>
-										<a onclick="return productDeletionConfirmation()" href="seller_view_all_products_in_shop.php?shopID=<?php echo $_GET['shopID'];?>&shopInventoryID=<?php echo $row2['shop_inventory_id'];?>">
+										<a onclick="return productDeletionConfirmation()" href="seller_view_all_products_in_shop.php?shopID=<?php echo $_GET['shopID'];?>&shopInventoryID=<?php echo $row2['shop_inventory_id'];?>&shopcategoryID=<?php echo $encriptedShopcategoryID;?>">
 										<i style="color: red; font-size: 20px;" class="fa fa-trash"></i>
 										</a>
 										<?php
@@ -126,7 +163,7 @@
 									else
 									{
 									?>
-									<a onclick="return optionDeletionConfirmation()" href="seller_view_all_products_in_shop.php?shopID=<?php echo $_GET['shopID'];?>&optionID=<?php echo $row2['option_id'];?>">
+									<a onclick="return optionDeletionConfirmation()" href="seller_view_all_products_in_shop.php?shopID=<?php echo $_GET['shopID'];?>&optionID=<?php echo $row2['option_id'];?>&shopcategoryID=<?php echo $encriptedShopcategoryID;?>">
 									<i style="color: red; font-size: 20px;" class="fa fa-trash"></i>
 									</a>
 									<?php
@@ -134,8 +171,9 @@
 									?>
 								</label>
 							</div>
-
+						</form>
 							<?php
+							$num++;
 							}
 						?>
 					</td>
@@ -152,7 +190,13 @@
 		}
 		else {
 			?>
-			<h1 style="display: flex; justify-content: center; align-items: center; height: 55vh;"class="message">Shop is empty</h1>
+			<div style="height: 50px;"></div>
+			<div class="message">
+				<h1>Shop is Empty !</h1>
+				<div class="shop-btn">
+    			<a href="seller_all_products_list.php?shopID=<?php echo $encriptedShopID;?>&shopcategoryID=<?php echo $encriptedShopcategoryID;?>"><button>Add Items to Shop</button></a>
+    		</div>
+			</div>
 			<?php
 		}
 		?>		
@@ -168,22 +212,35 @@
 
 <!-- delete product option or product from shop -->
 <?php
-	if(isset($_GET['status']) && isset($_GET['optionID']) )
+	if(isset($_GET['update']) && isset($_GET['optionID']))
+	{
+		print_r($_POST);
+		$sql = "UPDATE product_seller_edit SET product_mrp='$_POST[mrp]', product_sp='$_POST[sp]', product_quantity='$_POST[weight]', product_wt_unit_id='$_POST[unit]' WHERE option_id='$_GET[optionID]'";
+		mysqli_query($con,$sql) or die(mysqli_error($con));
+		$_SESSION['message'] = 'Updated Successfully';
+		$_SESSION['color'] = '#2ecc71';
+		?>
+<script>location.href='seller_view_all_products_in_shop.php?shopID=<?php echo $encriptedShopID;?>&shopcategoryID=<?php echo $encriptedShopcategoryID;?>'</script>
+		<?php
+	}
+	else if(isset($_GET['status']) && isset($_GET['optionID']) )
 	{
 		$status=!$_GET['status'];
 		$ID=$_GET['optionID'];
 		$sql="UPDATE product_seller_edit SET product_status='$status' WHERE option_id='$ID'";
 		mysqli_query($con,$sql);
 ?>
-<script>location.href='seller_view_all_products_in_shop.php?shopID=<?php echo $encriptedShopID;?>'</script>
+<script>location.href='seller_view_all_products_in_shop.php?shopID=<?php echo $encriptedShopID;?>&shopcategoryID=<?php echo $encriptedShopcategoryID;?>'</script>
 <?php
 	}
 	else if(isset($_GET['optionID']))
 	{
 		$sql = "DELETE FROM product_seller_edit WHERE option_id='$_GET[optionID]'";
 		mysqli_query($con,$sql);
+		$_SESSION['message'] = 'Deleted Successfully';
+		$_SESSION['color'] = '#e74c3c';
 ?>
-<script>location.href='seller_view_all_products_in_shop.php?shopID=<?php echo $encriptedShopID;?>'</script>
+<script>location.href='seller_view_all_products_in_shop.php?shopID=<?php echo $encriptedShopID;?>&shopcategoryID=<?php echo $encriptedShopcategoryID;?>'</script>
 <?php		
 	}
 	else if(isset($_GET['shopInventoryID']))
@@ -192,8 +249,12 @@
 		mysqli_query($con,$sql);
 		$sql = "DELETE FROM product_seller_edit WHERE shop_inventory_id='$_GET[shopInventoryID]'";
 		mysqli_query($con,$sql);
+		
+		$_SESSION['message'] = 'Deleted Successfully';
+		$_SESSION['color'] = '#e74c3c';
 ?>
-<script>location.href='seller_view_all_products_in_shop.php?shopID=<?php echo $encriptedShopID;?>'</script>
+<script>location.href='seller_view_all_products_in_shop.php?shopID=<?php echo $encriptedShopID;?>&shopcategoryID=<?php echo $encriptedShopcategoryID;?>'</script>
 <?php
 	}
+	mysqli_close($con);
 ?>
