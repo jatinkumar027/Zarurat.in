@@ -1,0 +1,295 @@
+a:link{
+		text-decoration: none;
+}
+.profile-menu
+{
+	position: absolute;
+	right: 0;
+	top: 50px;
+	box-shadow: 0px 0px 3px 0px black;
+	display: none;
+	z-index: 2;
+	color : white;
+	background: white;
+	position: fixed;
+}
+.profile-menu div
+{
+font-size: 15px;
+display: flex;
+flex-direction: column;
+}
+.profile-menu div a,.profile-menu div label
+{
+	cursor: pointer;
+	color: black;
+	padding: 5px;
+}
+.profile-menu div a:hover
+{
+	background:  rgba(0, 153, 130 ,0.8);;
+	color : white;
+}
+.profile-menu div label:hover
+{
+	background:  rgba(0, 153, 130 ,0.8);
+	color : white;
+}
+
+
+
+.change-password-popup
+{
+	position: absolute;
+	height: 270px;
+	width: 400px;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	border-radius:15px;
+	background: white;
+	opacity:1;
+	box-shadow: 0px 0px 4px 0px #2d3436;
+	display: none;
+	position: fixed;
+	z-index: 3;
+}
+.change-password-popup form
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	align-content: space-evenly;
+	height: 200px;
+	margin-top: 5px;
+
+}
+.change-password-popup form input
+{
+	height: 37px;
+	width: 90%;
+	padding-left: 5px;
+	border: 2px solid #b2bec3;
+	border-radius: 6px;
+		font-size: 18px;
+}
+.change-password-popup form input:focus
+{
+	border: 2px solid transparent;
+	box-shadow: 0px 2px 4px 0px #169483;
+	outline: none;
+}
+#update-btn
+{
+	border: 2px solid #169483;
+}
+#update-btn:hover
+{
+	background: #169483;
+
+	color:white;
+}
+#update-btn:focus
+{
+	outline: none;
+}
+
+.cancel-icon-container
+{
+	display: flex;
+	justify-content:space-between;
+	margin-bottom : 15px;
+
+}
+.cancel-icon-container label
+{
+
+	margin-right: 10px;
+	margin-left : 20px;
+	margin-top : 5px;
+	font-size : 20px;
+	font-family : 'Roboto', Sans-serif;
+}
+.cancel-icon-container label i
+{
+	cursor: pointer;
+	font-size : 20px;
+}
+.cancel-icon-container label i:hover
+{
+	color : #3498db;
+}
+
+.logged-in-header
+{
+	display: flex;
+	justify-content: space-between;
+	height: 50px;
+	background : linear-gradient(57deg, rgba(26, 66, 127 ,1), rgba(0, 153, 130 ,1), rgba(51, 51, 51 ,1));
+	position: fixed;
+	width: 100%;
+	z-index: 2;
+}
+.logged-in-header div
+{
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.left a
+{
+	height: 100%;
+	cursor: pointer;
+	color: white;
+	padding: 0px 15px;
+	line-height: 50px;
+}
+.left a:hover
+{
+	background: rgba(0, 153, 130 ,0.5);
+}
+.right a
+{
+	height: 100%;
+	cursor: pointer;
+	color: white;
+	padding: 0px 10px;
+
+	line-height: 50px;
+}
+
+.right a:hover
+{
+	background: rgba(0, 153, 130 ,0.5);
+}
+
+.right label
+{
+	height: 100%;
+	cursor: pointer;
+	color: white;
+	padding: 0px 10px;
+	line-height: 50px;
+}
+.right label:hover
+{
+	background: rgba(0, 153, 130 ,0.5);
+}
+
+/* POP UP SIGN IN SIGN UP CSS */
+.buyer-signin-signup-popup
+        {
+            width : 400px;
+            height :450px;
+            position : absolute;
+						background: white;
+						display: none;
+            transform : translate(-50%,-50%);
+            left : 50%;
+            top : 50%;
+            box-shadow : 0px 0px 3px 0px black;
+        }
+        .popup-intro
+        {
+            display : flex;
+            align-items : center;
+            font-weight : 600;
+            font-size : 20px;
+            background : #ecf0f1;
+        }
+        .popup-intro label
+        {
+            display : flex;
+            flex : 1;
+            height : 40px;
+            justify-content : center;
+            align-items : center;
+        }
+        .popup-intro label:hover
+        {
+            cursor : pointer;
+        }
+
+        .popup-intro label:nth-child(1)
+        {
+            border-top-right-radius : 15px;
+            border-bottom-right-radius : 15px;
+            background: linear-gradient(90deg, #FEC001, #FA990A);
+        }
+        .popup-intro label:nth-child(2)
+        {
+            border-top-left-radius : 15px;
+            border-bottom-left-radius : 15px;
+        }
+
+        .input-style
+        {
+            width: 80%;
+            height: 30px;
+            border:2px solid #7f8c8d;
+            margin-top: 30px;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            padding-left: 5px;
+            font-size: 17px;
+        }
+        .input-style:focus
+        {
+            outline:none;
+            border-bottom: 2px solid #3498db;
+            transition: border linear 500ms;
+        }
+        .submit-style
+        {
+            width: 80%;
+            height: 40px;
+            margin-top: 30px;
+            margin-right: 5px;
+            margin-left: 5px;
+            cursor: pointer;
+            font-size: 17px;
+            border:2px solid #169483;
+            border-radius: 5px;
+            text-align : center;
+        }
+
+        .submit-style:focus
+        {
+            outline: none;
+
+        }
+        .submit-style:hover
+        {
+            color: white;
+            background: #169483;
+        }
+        .form-field-container
+        {
+            display : flex;
+            flex-direction : column;
+            align-items : center;
+        }
+        .login-form-container
+        {
+            display : none;
+        }
+        .register-form-container
+        {
+            display : block;
+        }
+        #buyer-form-close-icon
+        {
+            position : absolute;
+            right : -28px;
+            top : -4px;
+        }
+        #buyer-form-close-icon:hover
+        {
+            color : red;
+            cursor : pointer;
+        }

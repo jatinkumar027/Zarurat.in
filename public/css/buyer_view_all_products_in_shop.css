@@ -1,0 +1,128 @@
+/* WHEN NO Products Available*/
+
+.message
+{
+	height: 25vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.shop-btn
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+  margin-top: 0px;
+	height: 100%;
+}
+.shop-btn a button
+{
+	height: 60px;
+	width: 400px;
+	font-size: 22px;
+	border-radius: 15px;
+	background : #169483;
+	color: white;
+	cursor: pointer;
+	border: none;
+}
+.shop-btn button:hover
+{
+	background : #20A694;
+}
+.shop-btn button:focus
+{
+	outline : none;
+}
+
+/* Products */
+.thumbnail
+{
+	width: 100px;
+	height: 100px;
+}
+.product-list-container
+{
+	display: flex;
+	justify-content: center;
+}
+
+table
+{
+	border: 1px solid #ddd;
+	width: 97%;
+	border-collapse: collapse;
+	box-shadow: 0px 0px 3px 0px black;
+	margin-top: 60px;
+	margin-bottom: 20px;
+	font-family: 'Roboto',sans-serif;
+
+}
+td,th
+{
+	border: 1px solid #ddd;
+}
+td
+{
+	padding: 8px;
+	text-align: center;
+}
+th
+{
+	padding: 8px 15px;
+	background: rgba(30, 77, 146 ,0.3);
+}
+tr:nth-child(even)
+{
+	background: #f2f2f2;
+}
+.options
+{
+	display: flex;
+	border : 1px solid black;
+	margin : 3px 0px;
+}
+
+.options label
+{
+	display: flex;
+	flex : 1;
+	padding: 5px;
+	align-items: center;
+	justify-content: center;
+
+}
+.input-style
+{
+	width : 85%;
+	cursor: no-drop;
+  background: white;
+}
+.icon-style
+{
+	font-size: 15px;
+}
+.toggle
+{
+	font-size: 20px;
+}
+.info
+{
+	height: 250px;
+}
+
+.add-to-cart-btn{
+	width: 100px;
+	border: 0.5px solid black;
+}
+
+.add-to-cart-btn:hover{
+	background: black;
+	color: white;
+}
+.added-to-cart-btn{
+	background: grey;
+	color:black;
+	cursor: not-allowed;
+}

@@ -1,0 +1,186 @@
+.profile-menu
+{
+	position: absolute;
+	right: 0;
+	top: 50px;
+	box-shadow: 0px 0px 3px 0px black; 
+	display: none;
+	z-index: 2;
+	color : white;
+	background: white;
+	position: fixed;
+}
+.profile-menu div
+{
+font-size: 15px;
+display: flex;
+flex-direction: column;
+
+
+}
+.profile-menu div a,.profile-menu div label
+{
+	cursor: pointer;
+	color: black;
+	padding: 5px;
+}
+.profile-menu div a:hover
+{
+	background:  rgba(0, 153, 130 ,0.8);;
+	color : white;
+}
+.profile-menu div label:hover
+{
+	background:  rgba(0, 153, 130 ,0.8);
+	color : white;
+}
+
+
+
+.change-password-popup
+{
+	position: absolute;
+	height: 270px;
+	width: 400px;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	border-radius:15px; 
+	background: white;
+	opacity:1;
+	box-shadow: 0px 0px 4px 0px #2d3436;
+	display: none;
+	position: fixed;
+	z-index: 3;
+}
+.change-password-popup form
+{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	align-content: space-evenly;
+	height: 200px;
+	margin-top: 5px;
+
+}
+.change-password-popup form input
+{
+	height: 37px;
+	width: 90%;
+	padding-left: 5px;
+	border: 2px solid #b2bec3;
+	border-radius: 6px;
+		font-size: 18px;
+}
+.change-password-popup form input:focus
+{
+	border: 2px solid transparent;
+	box-shadow: 0px 2px 4px 0px #169483;
+	outline: none;
+}	
+#update-btn
+{
+	border: 2px solid #169483;
+}
+#update-btn:hover
+{
+	background: #169483;
+	color:white;
+}
+#update-btn:focus
+{
+	outline: none;
+}
+
+.cancel-icon-container
+{		
+	display: flex;
+	justify-content:space-between;
+	margin-bottom : 15px;
+
+}
+.cancel-icon-container label
+{
+	
+	margin-right: 10px;
+	margin-left : 20px;
+	margin-top : 5px;
+	font-size : 20px;
+	font-family : 'Roboto', Sans-serif;
+}
+.cancel-icon-container label i
+{
+	cursor: pointer;
+	font-size : 20px;
+}
+.cancel-icon-container label i:hover
+{
+	color : #3498db;
+}
+
+
+
+.logged-in-header
+{
+	display: flex;
+	justify-content: space-between;
+	height: 50px;
+	background : linear-gradient(57deg, rgba(26, 66, 127 ,1), rgba(0, 153, 130 ,1), rgba(51, 51, 51 ,1));
+	position: fixed;
+	width: 100%;
+	z-index: 2;
+}
+.logged-in-header div
+{
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+.left a
+{
+	height: 100%;
+	cursor: pointer;
+	color: white;
+	padding: 0px 15px;
+	line-height: 50px;
+}
+.left a:hover
+{
+	background: rgba(0, 153, 130 ,0.5);
+}
+.right a
+{
+	height: 100%;
+	cursor: pointer;
+	color: white;
+	padding: 0px 10px;
+
+	line-height: 50px;
+}
+
+.right a:hover
+{
+	background: rgba(0, 153, 130 ,0.5);
+}
+
+.right label
+{
+	height: 100%;
+	cursor: pointer;
+	color: white;
+	padding: 0px 10px;
+	line-height: 50px;
+}
+.right label:hover
+{
+	background: rgba(0, 153, 130 ,0.5);
+}
+#google_translate_element
+{
+	height: 25px;
+}
