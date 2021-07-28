@@ -174,6 +174,14 @@ At the moment, we aim to support all major web browsers. Any issue in the browse
 
 ### Known Bugs
     Some of the links are not working yet because that page regarding to the link is not completed.
+    
+### Screenshot
+
+![Home Page](https://github.com/jatinkumar027/Zarurat.in/blob/master/HomePage_Screenshot.png?raw=true)
+
+![Seller Page](https://github.com/jatinkumar027/Zarurat.in/blob/master/SellerPage_Screenshot-1.png?raw=true)
+
+![Seller Page](https://github.com/jatinkumar027/Zarurat.in/blob/master/SellerPage_Screenshot-2.png?raw=true)
 
 ### Copyright and License
 	The theme is available as open source under the standard MIT License
